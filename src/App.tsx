@@ -25,7 +25,7 @@ const boxStyle = {
   justifyContent: "center",
   padding: "0px 20px",
   overflow: "auto",
-  color: "blue",
+  color: "green",
 };
 
 function App() {
