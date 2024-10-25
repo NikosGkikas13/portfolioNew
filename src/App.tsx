@@ -3,37 +3,43 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageHome from "./components/PageHome.tsx";
 import Header from "./components/Header.tsx";
 import { Box, Container } from "@mui/material";
+import ServicePage from "./components/ServicePage.tsx";
+import AboutMe from "./components/AboutMe.tsx";
+import Contact from "./components/Contact.tsx";
+import ShootingStars from "./components/ShootingStars.tsx";
+
+const containerStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  height: "700px",
+  gap: "20px",
+};
+const boxStyle = {
+  background: "#ffffffe8",
+  // width: "80%",
+  width: "900px",
+  height: "100%",
+  display: "flex",
+  // alignItems: window.location.href.includes("about") ? "start" : "center",
+  justifyContent: "center",
+  padding: "0px 20px",
+  overflow: "auto",
+};
 
 function App() {
   return (
     <BrowserRouter>
-      <Container
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          width: "1400px",
-          justifyContent: "space-between",
-          height: "700px",
-        }}
-        maxWidth="xl"
-      >
+      <ShootingStars />
+      <Container sx={containerStyle} maxWidth="xl" style={{ zIndex: 4 }}>
         <Header />
-        <Box
-          sx={{
-            background: "#fff",
-            width: "80%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <Box sx={boxStyle} style={{ zIndex: 4 }}>
           <Routes>
             <Route path={"/"} element={<PageHome />} />
-            <Route path={"/about"} element={<h1>about</h1>} />
-            <Route path={"/services"} element={<h1>services</h1>} />
+            <Route path={"/about"} element={<AboutMe />} />
+            <Route path={"/services"} element={<ServicePage />} />
             <Route path={"/Portfolio"} element={<h1>portfolio</h1>} />
-            <Route path={"/contact"} element={<h1>contact</h1>} />
+            <Route path={"/contact"} element={<Contact />} />
           </Routes>
         </Box>
       </Container>
