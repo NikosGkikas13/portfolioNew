@@ -34,7 +34,6 @@ function App() {
             <Route path={"/services"} element={<h1>services</h1>} />
             <Route path={"/Portfolio"} element={<h1>portfolio</h1>} />
             <Route path={"/contact"} element={<h1>contact</h1>} />
-            <Route path={"/test"} element={<h1>contact</h1>} />
           </Routes>
         </Box>
       </Container>
