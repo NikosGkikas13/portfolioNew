@@ -49,3 +49,66 @@ export const SERVICES: ServiceType[] = [
       "Using version control systems to manage code changes and collaborate with other developers.",
   },
 ];
+export const programmingLanguages = [
+  {
+    title: "Javascript",
+    skills: ["Rest API", "Async Fetching", "ES6"],
+  },
+  {
+    title: "React",
+    skills: [
+      "Redux / Redux Toolkit",
+      "Styled Components",
+      "GraphQL / ApolloClient",
+      "Axios",
+      "Context",
+    ],
+  },
+  { title: "Jquery", skills: ["Rest API", "Async Fetching", "AJAX"] },
+  {
+    title: "PHP",
+    skills: ["Vanilla PHP", "Database connection", "Laravel familiarity"],
+  },
+  { title: "Wordpress", skills: ["Theme Development"] },
+  { title: "HTML5", skills: [] },
+  { title: "CSS3", skills: [] },
+  {
+    title: "C",
+    skills: [
+      "Functions",
+      "Structures",
+      "Pointers",
+      "Trees",
+      "Graphs",
+      "Lists / Stacks",
+    ],
+  },
+];
+export const aboutMeData = {
+  name: "Nikos Gkikas",
+  city: "Marathon, Greece",
+  age: "31",
+  email: "ngkdev93@gmail.com",
+  mobile: "+30 6984764168",
+};
+export const historyData = [
+  {
+    companyTitle: "Freelance",
+    years: "2019 - 2020",
+    jobTitle: "Junior web developer",
+    jobDescription: ["maintained the whole project all by  myself"],
+  },
+  {
+    companyTitle: "Sportion",
+    years: "2020 - 2022",
+    jobTitle: "Junior web developer",
+    jobDescription: ["maintained the whole project all by  myself"],
+  },
+  {
+    companyTitle: "OKTO",
+    years: "2022 - now",
+    jobTitle: "Front end developer",
+    jobDescription: ["maintained the whole project all by  myself"],
+  },
+];
+export const isDesktop = window.innerWidth > 1024;

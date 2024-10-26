@@ -1,18 +1,11 @@
 import React from "react";
 import AboutMeContainer from "./AboutMeContainer";
 import { Divider, List, ListItem, Typography } from "@mui/material";
+import { aboutMeData } from "../constants";
 
 const dividerStyle = {
   background: "red",
   margin: "20px 0px",
-};
-
-const aboutMeData = {
-  name: "Nikos Gkikas",
-  city: "Marathon, Greece",
-  age: "31",
-  email: "ngkdev93@gmail.com",
-  mobile: "+30 6984764168",
 };
 
 const PersonalInfo = () => {

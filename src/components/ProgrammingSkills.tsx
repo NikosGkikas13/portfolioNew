@@ -13,42 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { ModalComponent } from "./ModalComponent";
-
-const programmingLanguages = [
-  {
-    title: "Javascript",
-    skills: ["Rest API", "Async Fetching", "ES6"],
-  },
-  {
-    title: "React",
-    skills: [
-      "Redux / Redux Toolkit",
-      "Styled Components",
-      "GraphQL / ApolloClient",
-      "Axios",
-      "Context",
-    ],
-  },
-  { title: "Jquery", skills: ["Rest API", "Async Fetching", "AJAX"] },
-  {
-    title: "PHP",
-    skills: ["Vanilla PHP", "Database connection", "Laravel familiarity"],
-  },
-  { title: "Wordpress", skills: ["Theme Development"] },
-  { title: "HTML5", skills: [] },
-  { title: "CSS3", skills: [] },
-  {
-    title: "C",
-    skills: [
-      "Functions",
-      "Structures",
-      "Pointers",
-      "Trees",
-      "Graphs",
-      "Lists / Stacks",
-    ],
-  },
-];
+import { programmingLanguages } from "../constants";
 
 const ProgrammingSkills = () => {
   return (

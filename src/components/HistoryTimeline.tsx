@@ -13,27 +13,7 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import Typography from "@mui/material/Typography";
 import AboutMeContainer from "./AboutMeContainer";
 import HistoryTimelineItem from "./HistoryTimelineItem";
-
-const historyData = [
-  {
-    companyTitle: "Freelance",
-    years: "2019 - 2020",
-    jobTitle: "Junior web developer",
-    jobDescription: ["maintained the whole project all by  myself"],
-  },
-  {
-    companyTitle: "Sportion",
-    years: "2020 - 2022",
-    jobTitle: "Junior web developer",
-    jobDescription: ["maintained the whole project all by  myself"],
-  },
-  {
-    companyTitle: "OKTO",
-    years: "2022 - now",
-    jobTitle: "Front end developer",
-    jobDescription: ["maintained the whole project all by  myself"],
-  },
-];
+import { historyData } from "../constants";
 
 const HistoryTimeline = () => {
   return (
