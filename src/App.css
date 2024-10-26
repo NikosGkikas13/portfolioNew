@@ -174,3 +174,7 @@ span:nth-child(8) {
   animation-delay: 2.75s;
   animation-duration: 2.75s;
 }
+#about_me_container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

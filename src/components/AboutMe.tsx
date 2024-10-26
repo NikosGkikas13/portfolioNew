@@ -15,6 +15,7 @@ import HistoryTimeline from "./HistoryTimeline";
 const AboutMe = () => {
   return (
     <Container
+      id="about_me_container"
       sx={{
         display: "flex",
         // justifyContent: "center",
@@ -23,6 +24,7 @@ const AboutMe = () => {
         gap: "40px",
         marginTop: "18px",
         padding: "20px 0px",
+        overflow: "auto",
       }}
     >
       <PersonalInfo />

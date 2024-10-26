@@ -30,7 +30,7 @@ const PersonalInfo = () => {
           display: "flex",
           flexDirection: "column",
           flexWrap: "wrap",
-          height: "150px",
+          height: "180px",
         }}
       >
         {Object.entries(aboutMeData).map((item) => {

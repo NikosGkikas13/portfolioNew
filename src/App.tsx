@@ -24,14 +24,13 @@ const boxStyle = {
   // alignItems: window.location.href.includes("about") ? "start" : "center",
   justifyContent: "center",
   padding: "0px 20px",
-  overflow: "auto",
-  color: "blue",
+  color: "#000",
 };
 
 function App() {
   return (
     <BrowserRouter>
-      <ShootingStars />
+      {/* <ShootingStars /> */}
       <Container sx={containerStyle} maxWidth="xl" style={{ zIndex: 4 }}>
         <Header />
         <Box sx={boxStyle} style={{ zIndex: 4 }}>

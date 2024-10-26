@@ -26,8 +26,8 @@ const Header = () => {
       <Avatar alt="Remy Sharp" src={avatar} sx={{ width: 100, height: 100 }} />
       <Box sx={{ display: "flex", flexDirection: "column", gap: "5px" }}>
         {PAGES.map((page) => (
-          <MenuItem key={page.name}>
-            <Link to={page.link}>
+          <MenuItem style={{ transition: "none" }} key={page.name}>
+            <Link style={{ transition: "none" }} to={page.link}>
               <Typography>{page.name}</Typography>
             </Link>
           </MenuItem>
