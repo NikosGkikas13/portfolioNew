@@ -5,6 +5,9 @@ import CommitIcon from "@mui/icons-material/Commit";
 import ApiIcon from "@mui/icons-material/Api";
 import CodeIcon from "@mui/icons-material/Code";
 import { ServiceType } from "./Types";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
 export const PAGES = [
   { name: "Home", link: "/" },
   { name: "Services", link: "/services" },
@@ -112,3 +115,17 @@ export const historyData = [
   },
 ];
 export const isDesktop = window.innerWidth > 1024;
+export const SOCIALS = [
+  {
+    link: "https://www.linkedin.com/in/nikos-gkikas-7b250b1b0",
+    icon: LinkedInIcon,
+  },
+  {
+    link: "https://github.com/NikosGkikas13",
+    icon: GitHubIcon,
+  },
+  {
+    link: "https://www.instagram.com/nick_klg",
+    icon: InstagramIcon,
+  },
+];
