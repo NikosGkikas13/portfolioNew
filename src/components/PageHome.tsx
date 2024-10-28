@@ -10,7 +10,7 @@ const boxStyle = {
 
 const PageHome = () => {
   return (
-    <Box sx={boxStyle}>
+    <Box sx={boxStyle} id="home">
       <Typography variant="h2">NIKOS GKIKAS</Typography>
       <Typography variant="h5">Front end developer</Typography>
     </Box>

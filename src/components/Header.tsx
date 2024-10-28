@@ -1,21 +1,19 @@
 import { MenuItem, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
-import AdbIcon from "@mui/icons-material/Adb";
 import { isDesktop, PAGES } from "../constants.ts";
 import { Link } from "react-router-dom";
 import HeaderBottom from "./HeaderBottom.tsx";
 import avatar from "../assets/avatar.jpeg";
 import { useState } from "react";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 const Header = () => {
   const DesktopNavbar = () => (
     <Box
@@ -47,11 +45,12 @@ const Header = () => {
   );
 
   const MobileNavbar = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const toggleDrawer = (newOpen: boolean) => () => {
       setOpen(newOpen);
     };
+    const drawerButton = open ? <CloseIcon /> : <MenuIcon />;
 
     const DrawerList = (
       <Box
@@ -103,12 +102,19 @@ const Header = () => {
 
     return (
       <div>
-        <Button
-          onClick={toggleDrawer(true)}
-          sx={{ position: "fixed", top: 0, left: 0 }}
+        <div
+          style={{
+            position: "fixed",
+            top: 10,
+            left: 10,
+            zIndex: 1201,
+            // color: "white",
+          }}
+          onClick={() => setOpen(!open)}
         >
-          Open drawer
-        </Button>
+          {drawerButton}
+        </div>
+
         <Drawer open={open} onClose={toggleDrawer(false)}>
           {DrawerList}
         </Drawer>

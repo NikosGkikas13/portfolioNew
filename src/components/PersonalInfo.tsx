@@ -11,12 +11,7 @@ const dividerStyle = {
 const PersonalInfo = () => {
   return (
     <AboutMeContainer title="ABOUT ME">
-      <Typography variant="h5">
-        I’m Nikos Gkikas, a front-end web developer based in Athens, Greece. I
-        have a Bachelor degree in Informatics Engineering. I find beauty in
-        writting clean,thorough and well-structrured code for websites. My goal
-        is to get better with each day.
-      </Typography>
+      <Typography variant="h5">{aboutMeData.whoAmI}</Typography>
       <Divider sx={dividerStyle} flexItem variant="fullWidth" />
       <List
         sx={{

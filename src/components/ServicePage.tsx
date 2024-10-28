@@ -21,12 +21,14 @@ const boxStyle = {
 
 const ServicePage = () => {
   return (
-    <Box sx={boxStyle}>
-      <List sx={styleList}>
-        {SERVICES.map((service: ServiceType) => {
-          return <Service key={service.title} service={service} />;
-        })}
-      </List>
+    <Box id="services-padding-container">
+      <Box sx={boxStyle} id="services">
+        <List sx={styleList}>
+          {SERVICES.map((service: ServiceType) => {
+            return <Service key={service.title} service={service} />;
+          })}
+        </List>
+      </Box>
     </Box>
   );
 };

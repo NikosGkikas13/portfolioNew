@@ -184,3 +184,50 @@ span:nth-child(8) {
     max-width: 1024px;
   }
 }
+@media only screen and (max-width: 1024px) {
+  #root {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #root {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #services-padding-container {
+    padding: 20px 0px;
+  }
+  #services {
+    justify-content: flex-start;
+    overflow: auto;
+  }
+  #services ul {
+    padding: 0;
+  }
+  #services ul li {
+    max-width: 45%;
+  }
+  #services ul li p {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #home h2 {
+    font-size: 2rem;
+  }
+  #home h5 {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #home h2 {
+    font-size: 1.4rem;
+  }
+  #home h5 {
+    font-size: 1rem;
+  }
+}
+/* Burger Icon */
+
+/* Burger Icon */
