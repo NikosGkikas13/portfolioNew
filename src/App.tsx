@@ -33,7 +33,7 @@ function App() {
       {/* <ShootingStars /> */}
       <Container sx={containerStyle} maxWidth="xl" style={{ zIndex: 4 }}>
         <Header />
-        <Box sx={boxStyle} style={{ zIndex: 4 }}>
+        <Box id="page_container" sx={boxStyle} style={{ zIndex: 4 }}>
           <Routes>
             <Route path={"/"} element={<PageHome />} />
             <Route path={"/about"} element={<AboutMe />} />

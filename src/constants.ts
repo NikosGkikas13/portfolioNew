@@ -90,9 +90,9 @@ export const programmingLanguages = [
 export const aboutMeData = {
   name: "Nikos Gkikas",
   city: "Marathon, Greece",
-  age: "31",
-  email: "ngkdev93@gmail.com",
   mobile: "+30 6984764168",
+  email: "ngkdev93@gmail.com",
+  age: "31",
   whoAmI:
     "I’m Nikos Gkikas, a front-end web developer based in Athens, Greece. I have a Bachelor degree in Informatics Engineering. I find beauty in writting clean,thorough and well-structrured code for websites. My goal is to get better with each day.",
 };

@@ -26,7 +26,10 @@ const ProgrammingSkills = () => {
         >
           {programmingLanguages.map((item) => {
             return (
-              <ListItem key={item.title} sx={{ maxWidth: "30%" }}>
+              <ListItem
+                key={item.title}
+                sx={{ maxWidth: window.innerWidth > 600 ? "30%" : "50%" }}
+              >
                 <Card>
                   <CardMedia
                     component="img"
@@ -40,19 +43,13 @@ const ProgrammingSkills = () => {
                       variant="h5"
                       textAlign={"center"}
                       component="div"
+                      sx={{
+                        fontSize:
+                          window.innerWidth > 768 ? "undefined" : "1rem",
+                      }}
                     >
                       {item.title}
                     </Typography>
-                    {/* <Typography
-                        variant="body2"
-                        sx={{ color: "text.secondary" }}
-                      >
-                        <List>
-                          {item.skills.map((skill) => {
-                            return <ListItem key={skill}>{skill}</ListItem>;
-                          })}
-                        </List>
-                      </Typography> */}
                   </CardContent>
                   <CardActions
                     sx={{ display: "flex", justifyContent: "center" }}
@@ -60,11 +57,6 @@ const ProgrammingSkills = () => {
                     <ModalComponent programmingLanguage={item} />
                   </CardActions>
                 </Card>
-                {/* <List>
-                  {item.skills.map((skill) => {
-                    return <h1>{skill}</h1>;
-                  })}
-                </List> */}
               </ListItem>
             );
           })}

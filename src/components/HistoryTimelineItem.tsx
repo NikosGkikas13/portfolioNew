@@ -6,13 +6,8 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import HotelIcon from "@mui/icons-material/Hotel";
-import RepeatIcon from "@mui/icons-material/Repeat";
 import { Typography } from "@mui/material";
 import React from "react";
-import { sep } from "path";
 
 interface HistoryTimelineItemProps {
   companyTitle: string;
@@ -29,10 +24,12 @@ const HistoryTimelineItem = ({
   jobDescription,
   separator,
 }: HistoryTimelineItemProps) => {
-  console.log(separator);
   return (
     <TimelineItem>
-      <TimelineOppositeContent color="text.secondary">
+      <TimelineOppositeContent
+        color="text.secondary"
+        sx={{ fontSize: window.innerWidth > 500 ? "undefined" : "1rem" }}
+      >
         {companyTitle}
       </TimelineOppositeContent>
       <TimelineSeparator>
@@ -41,11 +38,23 @@ const HistoryTimelineItem = ({
       </TimelineSeparator>
       <TimelineContent>
         {" "}
-        <Typography variant="h6" component="span">
+        <Typography
+          variant="h6"
+          component="span"
+          sx={{ fontSize: window.innerWidth > 500 ? "undefined" : "1rem" }}
+        >
           {jobTitle}
         </Typography>
-        <Typography>{years}</Typography>
-        <Typography>{jobDescription}</Typography>
+        <Typography
+          sx={{ fontSize: window.innerWidth > 500 ? "undefined" : "0.8rem" }}
+        >
+          {years}
+        </Typography>
+        <Typography
+          sx={{ fontSize: window.innerWidth > 500 ? "undefined" : "0.8rem" }}
+        >
+          {jobDescription}
+        </Typography>
       </TimelineContent>
     </TimelineItem>
   );

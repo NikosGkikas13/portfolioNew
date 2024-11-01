@@ -16,25 +16,26 @@ const PersonalInfo = () => {
       <List
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: window.innerWidth > 500 ? "column" : "row",
           flexWrap: "wrap",
           height: "180px",
         }}
       >
         {Object.entries(aboutMeData).map((item) => {
-          return (
-            <ListItem
-              sx={{
-                width: "50%",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-              key={item[0]}
-            >
-              <Typography variant="h6">{item[0]}: </Typography>
-              <Typography variant="h6">{item[1]}</Typography>
-            </ListItem>
-          );
+          if (item[0] !== "whoAmI")
+            return (
+              <ListItem
+                sx={{
+                  width: window.innerWidth > 500 ? "50%" : "100%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+                key={item[0]}
+              >
+                <Typography variant="h6">{item[0]}: </Typography>
+                <Typography variant="h6">{item[1]}</Typography>
+              </ListItem>
+            );
         })}
       </List>
     </AboutMeContainer>

@@ -175,19 +175,15 @@ span:nth-child(8) {
   animation-delay: 2.75s;
   animation-duration: 2.75s;
 }
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
 #about_me_container {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-}
-@media only screen and (max-width: 1240px) {
-  #root {
-    max-width: 1024px;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  #root {
-    max-width: 100%;
-  }
 }
 @media only screen and (max-width: 1024px) {
   #root {
@@ -195,6 +191,9 @@ span:nth-child(8) {
   }
 }
 @media only screen and (max-width: 768px) {
+  #page_container {
+    padding: 10px;
+  }
   #services-padding-container {
     padding: 20px 0px;
   }
@@ -211,6 +210,18 @@ span:nth-child(8) {
   #services ul li p {
     font-size: 0.8rem;
   }
+  #about_me_container h5 {
+    font-size: 1rem;
+  }
+  #about_me_container h6 {
+    font-size: 0.8rem;
+  }
+  #about_me_container li {
+    height: 33%;
+  }
+  .css-46bh2p-MuiCardContent-root {
+    padding: 0 !important;
+  }
 }
 @media only screen and (max-width: 500px) {
   #home h2 {
@@ -218,6 +229,21 @@ span:nth-child(8) {
   }
   #home h5 {
     font-size: 1.2rem;
+  }
+  #services ul li {
+    max-width: 95%;
+  }
+  #about_me_container li {
+    height: auto;
+  }
+  .MuiTimeline-positionRight {
+    padding: 0 !important;
+  }
+  .css-qgrhvf-MuiTypography-root-MuiTimelineOppositeContent-root {
+    padding: 0px 16px 0px 0px !important;
+  }
+  .css-1allbak-MuiCardActions-root {
+    padding: 8px 0px !important;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -227,7 +253,25 @@ span:nth-child(8) {
   #home h5 {
     font-size: 1rem;
   }
+  #services ul li span {
+    font-size: 0.8rem;
+  }
+  #services ul li p {
+    font-size: 0.7rem;
+  }
+  #services ul li hr {
+    font-size: 0.7rem;
+  }
+  .css-1dt5qps-MuiContainer-root {
+    gap: 0 !important;
+  }
+  #root {
+    padding: 0;
+  }
+  .css-db57k8 {
+    width: 70% !important;
+  }
+  .css-1apkmlw-MuiButtonBase-root-MuiButton-root {
+    font-size: 0.7rem !important;
+  }
 }
-/* Burger Icon */
-
-/* Burger Icon */

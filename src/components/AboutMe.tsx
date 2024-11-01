@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Divider,
-  List,
-  ListItem,
-  Typography,
-} from "@mui/material";
+import { Container } from "@mui/material";
 import React from "react";
 
 import ProgrammingSkills from "./ProgrammingSkills";
