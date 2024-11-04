@@ -1,4 +1,4 @@
-import { MenuItem, Typography } from "@mui/material";
+import { MenuItem, Typography, useTheme } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { isDesktop, PAGES } from "../constants.ts";
 import { Link } from "react-router-dom";
@@ -15,14 +15,15 @@ import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 const Header = () => {
+  const theme = useTheme();
   const DesktopNavbar = () => (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-
-        background: "#ffffffe8",
+        color: theme.palette.primary.main,
+        background: theme.palette.background.default,
         // width: "15%",
         width: "200px",
         height: "100%",
@@ -35,12 +36,14 @@ const Header = () => {
         {PAGES.map((page) => (
           <MenuItem key={page.name}>
             <Link to={page.link}>
-              <Typography>{page.name}</Typography>
+              <Typography sx={{ color: theme.palette.primary.main }}>
+                {page.name}
+              </Typography>
             </Link>
           </MenuItem>
         ))}
       </Box>
-      <HeaderBottom />
+      {/* <HeaderBottom /> */}
     </Box>
   );
 
@@ -87,7 +90,9 @@ const Header = () => {
               <ListItem key={page.name} disablePadding>
                 <ListItemButton>
                   <Link to={page.link}>
-                    <Typography>{page.name}</Typography>
+                    <Typography sx={{ color: theme.palette.primary.main }}>
+                      {page.name}
+                    </Typography>
                   </Link>
                 </ListItemButton>
               </ListItem>
