@@ -34,7 +34,11 @@ function App() {
       <Container sx={containerStyle} maxWidth="xl" style={{ zIndex: 4 }}>
         <ThemeProvider theme={lightTheme}>
           <Header />
-          <Box id="page_container" sx={boxStyle} style={{ zIndex: 4 }}>
+          <Box
+            id="page_container"
+            sx={boxStyle}
+            style={{ zIndex: 4, padding: "0" }}
+          >
             <Routes>
               <Route path={"/"} element={<PageHome />} />
               <Route path={"/about"} element={<AboutMe />} />

@@ -43,7 +43,7 @@ const Header = () => {
           </MenuItem>
         ))}
       </Box>
-      {/* <HeaderBottom /> */}
+      <HeaderBottom />
     </Box>
   );
 
