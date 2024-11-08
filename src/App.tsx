@@ -2,10 +2,12 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageHome from "./components/PageHome.tsx";
 import Header from "./components/Header.tsx";
-import { Box, Container, ThemeProvider } from "@mui/material";
+import { Box, Container, Theme, ThemeProvider } from "@mui/material";
 import ServicePage from "./components/ServicePage.tsx";
 import AboutMe from "./components/AboutMe.tsx";
 import Contact from "./components/Contact.tsx";
+
+import { useState } from "react";
 import { lightTheme, darkTheme } from "./themes.tsx";
 
 const containerStyle = {
@@ -27,13 +29,18 @@ const boxStyle = {
   color: "#000",
 };
 
-function App() {
+const App = () => {
+  const [theme, setTheme] = useState<Theme>(lightTheme);
+
+  const toggleTheme = () =>
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  console.log(theme.palette.mode);
   return (
     <BrowserRouter>
       <div className="center"></div>
       <Container sx={containerStyle} maxWidth="xl" style={{ zIndex: 4 }}>
-        <ThemeProvider theme={darkTheme}>
-          <Header />
+        <ThemeProvider theme={theme}>
+          <Header toggleTheme={toggleTheme} />
           <Box
             id="page_container"
             sx={boxStyle}
@@ -50,6 +57,6 @@ function App() {
       </Container>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

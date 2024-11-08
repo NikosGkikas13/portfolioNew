@@ -14,7 +14,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-const Header = () => {
+import ThemeSwitchButton from "./ThemeSwitchButton.tsx";
+const Header = ({ toggleTheme }: { toggleTheme: () => void }) => {
   const theme = useTheme();
   const DesktopNavbar = () => (
     <Box
@@ -43,7 +44,8 @@ const Header = () => {
           </MenuItem>
         ))}
       </Box>
-      <HeaderBottom />
+      <ThemeSwitchButton toggleTheme={toggleTheme} />
+      {/* <HeaderBottom /> */}
     </Box>
   );
 
@@ -99,8 +101,8 @@ const Header = () => {
             ))}
           </List>
           <Divider />
-
-          <HeaderBottom />
+          <ThemeSwitchButton toggleTheme={toggleTheme} />
+          {/* <HeaderBottom /> */}
         </Box>
       </Box>
     );
