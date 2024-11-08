@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { Divider, List, ListItem } from "@mui/material";
+import { Divider, List, ListItem, useTheme } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -27,7 +27,7 @@ export const ModalComponent = ({
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  const theme = useTheme();
   return (
     <div>
       <Button onClick={handleOpen}>Open modal</Button>
@@ -38,11 +38,19 @@ export const ModalComponent = ({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            style={{ color: theme.palette.primary.main }}
+          >
             {title}
           </Typography>
           <Divider />
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography
+            id="modal-modal-description"
+            sx={{ mt: 2, color: theme.palette.primary.main }}
+          >
             <List>
               {skills.map((skill: string) => (
                 <ListItem key={skill}>{skill}</ListItem>

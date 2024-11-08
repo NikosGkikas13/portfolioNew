@@ -4,22 +4,22 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import { ServiceType } from "../Types";
-import { Icon } from "@mui/material";
+import { Icon, Typography, useTheme } from "@mui/material";
 import Divider from "@mui/material/Divider";
 
 const Service = ({ service }: { service: ServiceType }) => {
   const { icon, title, subtitle } = service;
   console.log(icon);
-  // console.log(AccountBalanceIcon);
+  const theme = useTheme();
 
   const listItemStyle = {
     flexDirection: "column",
     maxWidth: "30%",
-    border: "1px solid red",
+    border: `1px solid ${theme.palette.primary.main}`,
     padding: "16px",
   };
   const dividerStyle = {
-    background: "red",
+    background: theme.palette.primary.main,
     margin: "20px 0px",
   };
   return (
@@ -30,7 +30,19 @@ const Service = ({ service }: { service: ServiceType }) => {
         </Avatar>
       </ListItemAvatar>
       <Divider sx={dividerStyle} flexItem variant="fullWidth" />
-      <ListItemText primary={title} secondary={subtitle} />
+      <ListItemText
+        disableTypography
+        primary={
+          <Typography
+            variant="h6"
+            style={{ color: theme.palette.primary.main }}
+          >
+            {title}
+          </Typography>
+        }
+        secondary={subtitle}
+        sx={{ color: theme.palette.primary.main }}
+      />
     </ListItem>
   );
 };

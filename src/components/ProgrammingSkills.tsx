@@ -11,18 +11,27 @@ import {
   List,
   ListItem,
   Typography,
+  useTheme,
 } from "@mui/material";
 import { ModalComponent } from "./ModalComponent";
 import { programmingLanguages } from "../constants";
 
 const ProgrammingSkills = () => {
+  const theme = useTheme();
   return (
     <AboutMeContainer title="KNOWLEDGE">
       <Box>
-        <Typography variant="h5">PROGRAMMING SKILLS</Typography>
+        <Typography variant="h5" style={{ color: theme.palette.primary.main }}>
+          PROGRAMMING SKILLS
+        </Typography>
         {/* <Typography variant="h6">click on card for more info</Typography> */}
         <List
-          sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            color: theme.palette.primary.main,
+          }}
         >
           {programmingLanguages.map((item) => {
             return (
@@ -35,7 +44,11 @@ const ProgrammingSkills = () => {
                     component="img"
                     image={ReactIcon}
                     alt="green iguana"
-                    sx={{ width: "50%", margin: "0 auto", padding: "5px" }}
+                    sx={{
+                      width: "50%",
+                      margin: "0 auto",
+                      padding: "5px",
+                    }}
                   />
                   <CardContent>
                     <Typography
@@ -46,6 +59,7 @@ const ProgrammingSkills = () => {
                       sx={{
                         fontSize:
                           window.innerWidth > 768 ? "undefined" : "1rem",
+                        color: theme.palette.primary.main,
                       }}
                     >
                       {item.title}

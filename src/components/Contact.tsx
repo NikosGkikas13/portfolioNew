@@ -1,22 +1,6 @@
-import { Box, Button, Container, TextField } from "@mui/material";
+import { Box, Button, Container, TextField, useTheme } from "@mui/material";
 import { useState } from "react";
 import MapComponent from "./MapComponent";
-
-const style = {
-  container: {
-    display: "flex",
-    justifyContent: "space-around",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "20px 0px",
-  },
-  input: {
-    width: "45%",
-  },
-  textarea: {
-    width: "100%",
-  },
-};
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -24,6 +8,28 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const theme = useTheme();
+
+  const style = {
+    container: {
+      display: "flex",
+      justifyContent: "space-around",
+      flexDirection: "column",
+      alignItems: "center",
+      padding: "20px 0px",
+      background: theme.palette.background.default,
+    },
+    input: {
+      width: "45%",
+      border: `1px solid ${theme.palette.primary.main}`,
+      borderRadius: "4px",
+    },
+    textarea: {
+      width: "100%",
+      border: `1px solid ${theme.palette.primary.main}`,
+      borderRadius: "4px",
+    },
+  };
 
   const nameValidation = (text: string) => {
     if (/[^a-zA-Z]/.test(text)) {

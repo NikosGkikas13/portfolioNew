@@ -6,7 +6,7 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import React from "react";
 
 interface HistoryTimelineItemProps {
@@ -24,11 +24,15 @@ const HistoryTimelineItem = ({
   jobDescription,
   separator,
 }: HistoryTimelineItemProps) => {
+  const theme = useTheme();
   return (
     <TimelineItem>
       <TimelineOppositeContent
         color="text.secondary"
-        sx={{ fontSize: window.innerWidth > 500 ? "undefined" : "1rem" }}
+        sx={{
+          fontSize: window.innerWidth > 500 ? "undefined" : "1rem",
+          color: theme.palette.primary.main,
+        }}
       >
         {companyTitle}
       </TimelineOppositeContent>
@@ -41,17 +45,26 @@ const HistoryTimelineItem = ({
         <Typography
           variant="h6"
           component="span"
-          sx={{ fontSize: window.innerWidth > 500 ? "undefined" : "1rem" }}
+          sx={{
+            fontSize: window.innerWidth > 500 ? "undefined" : "1rem",
+            color: theme.palette.primary.main,
+          }}
         >
           {jobTitle}
         </Typography>
         <Typography
-          sx={{ fontSize: window.innerWidth > 500 ? "undefined" : "0.8rem" }}
+          sx={{
+            fontSize: window.innerWidth > 500 ? "undefined" : "0.8rem",
+            color: theme.palette.primary.main,
+          }}
         >
           {years}
         </Typography>
         <Typography
-          sx={{ fontSize: window.innerWidth > 500 ? "undefined" : "0.8rem" }}
+          sx={{
+            fontSize: window.innerWidth > 500 ? "undefined" : "0.8rem",
+            color: theme.palette.primary.main,
+          }}
         >
           {jobDescription}
         </Typography>

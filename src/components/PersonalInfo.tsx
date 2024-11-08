@@ -1,17 +1,19 @@
 import React from "react";
 import AboutMeContainer from "./AboutMeContainer";
-import { Divider, List, ListItem, Typography } from "@mui/material";
+import { Divider, List, ListItem, Typography, useTheme } from "@mui/material";
 import { aboutMeData } from "../constants";
 
-const dividerStyle = {
-  background: "red",
-  margin: "20px 0px",
-};
-
 const PersonalInfo = () => {
+  const theme = useTheme();
+  const dividerStyle = {
+    background: theme.palette.primary.main,
+    margin: "20px 0px",
+  };
   return (
     <AboutMeContainer title="ABOUT ME">
-      <Typography variant="h5">{aboutMeData.whoAmI}</Typography>
+      <Typography variant="h5" style={{ color: theme.palette.primary.main }}>
+        {aboutMeData.whoAmI}
+      </Typography>
       <Divider sx={dividerStyle} flexItem variant="fullWidth" />
       <List
         sx={{
@@ -19,6 +21,7 @@ const PersonalInfo = () => {
           flexDirection: window.innerWidth > 500 ? "column" : "row",
           flexWrap: "wrap",
           height: "180px",
+          color: theme.palette.primary.main,
         }}
       >
         {Object.entries(aboutMeData).map((item) => {
@@ -32,8 +35,18 @@ const PersonalInfo = () => {
                 }}
                 key={item[0]}
               >
-                <Typography variant="h6">{item[0]}: </Typography>
-                <Typography variant="h6">{item[1]}</Typography>
+                <Typography
+                  variant="h6"
+                  style={{ color: theme.palette.primary.main }}
+                >
+                  {item[0]}:{" "}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  style={{ color: theme.palette.primary.main }}
+                >
+                  {item[1]}
+                </Typography>
               </ListItem>
             );
         })}

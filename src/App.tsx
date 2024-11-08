@@ -32,7 +32,7 @@ function App() {
     <BrowserRouter>
       <div className="center"></div>
       <Container sx={containerStyle} maxWidth="xl" style={{ zIndex: 4 }}>
-        <ThemeProvider theme={lightTheme}>
+        <ThemeProvider theme={darkTheme}>
           <Header />
           <Box
             id="page_container"
@@ -41,9 +41,8 @@ function App() {
           >
             <Routes>
               <Route path={"/"} element={<PageHome />} />
-              <Route path={"/about"} element={<AboutMe />} />
               <Route path={"/services"} element={<ServicePage />} />
-              <Route path={"/Portfolio"} element={<h1>portfolio</h1>} />
+              <Route path={"/about"} element={<AboutMe />} />
               <Route path={"/contact"} element={<Contact />} />
             </Routes>
           </Box>

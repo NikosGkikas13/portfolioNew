@@ -1,25 +1,27 @@
-import { Box, List } from "@mui/material";
+import { Box, List, useTheme } from "@mui/material";
 import * as React from "react";
 import { SERVICES } from "../constants";
 import Service from "./Service";
 import { ServiceType } from "../Types";
 
-const styleList = {
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "10px",
-  justifyContent: "center",
-};
-
-const boxStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "100%",
-  flexDirection: "column",
-};
-
 const ServicePage = () => {
+  const theme = useTheme();
+
+  const styleList = {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "10px",
+    justifyContent: "center",
+  };
+
+  const boxStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    flexDirection: "column",
+    background: theme.palette.background.default,
+  };
   return (
     <Box id="services-padding-container">
       <Box sx={boxStyle} id="services">
