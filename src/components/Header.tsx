@@ -1,4 +1,4 @@
-import { MenuItem, Typography, useTheme } from "@mui/material";
+import { MenuItem, Switch, Typography, useTheme } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import { isDesktop, PAGES } from "../constants.ts";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import ThemeSwitchButton from "./ThemeSwitchButton.tsx";
-const Header = ({ toggleTheme }: { toggleTheme: () => void }) => {
+const Header = ({ toggle }: { toggle: () => void }) => {
   const theme = useTheme();
   const DesktopNavbar = () => (
     <Box
@@ -44,7 +44,7 @@ const Header = ({ toggleTheme }: { toggleTheme: () => void }) => {
           </MenuItem>
         ))}
       </Box>
-      <ThemeSwitchButton toggleTheme={toggleTheme} />
+      <ThemeSwitchButton toggle={toggle} />
       {/* <HeaderBottom /> */}
     </Box>
   );
@@ -101,7 +101,7 @@ const Header = ({ toggleTheme }: { toggleTheme: () => void }) => {
             ))}
           </List>
           <Divider />
-          <ThemeSwitchButton toggleTheme={toggleTheme} />
+          <ThemeSwitchButton toggle={toggle} />
           {/* <HeaderBottom /> */}
         </Box>
       </Box>

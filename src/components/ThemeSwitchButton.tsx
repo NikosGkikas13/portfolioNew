@@ -1,21 +1,15 @@
-import * as React from "react";
-import Switch from "@mui/material/Switch";
+import React from "react";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import { Box } from "@mui/material";
+import BedtimeIcon from "@mui/icons-material/Bedtime";
 import { useTheme } from "@emotion/react";
-
-export const ControlledSwitches = ({
-  toggleTheme,
-}: {
-  toggleTheme: () => void;
-}) => {
+const ThemeSwitchButton = ({ toggle }: { toggle: () => void }) => {
   const theme = useTheme();
-
-  return (
-    <Switch
-      checked={theme.palette.mode === "light" ? true : false}
-      onChange={toggleTheme}
-      inputProps={{ "aria-label": "controlled" }}
-    />
-  );
+  const SwitchIcon = () => {
+    if (theme.palette.mode === "light") return <WbSunnyIcon />;
+    if (theme.palette.mode === "dark") return <BedtimeIcon />;
+  };
+  return <Box onClick={toggle}>{SwitchIcon()}</Box>;
 };
 
-export default ControlledSwitches;
+export default ThemeSwitchButton;
