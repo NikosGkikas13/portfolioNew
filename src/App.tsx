@@ -2,12 +2,18 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageHome from "./components/PageHome.tsx";
 import Header from "./components/Header.tsx";
-import { Box, Container, Theme, ThemeProvider } from "@mui/material";
+import {
+  Box,
+  Container,
+  CssBaseline,
+  Theme,
+  ThemeProvider,
+} from "@mui/material";
 import ServicePage from "./components/ServicePage.tsx";
 import AboutMe from "./components/AboutMe.tsx";
 import Contact from "./components/Contact.tsx";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { lightTheme, darkTheme } from "./themes.tsx";
 
 const containerStyle = {
@@ -32,14 +38,23 @@ const boxStyle = {
 const App = () => {
   const [theme, setTheme] = useState<Theme>(lightTheme);
 
+  useEffect(() => {});
+
   const toggleTheme = () =>
     setTheme(theme === lightTheme ? darkTheme : lightTheme);
-  console.log(theme.palette.mode);
+
+  //playground
+  const clickHandler = () => {
+    console.log(theme.palette.mode);
+    toggleTheme();
+  };
+  //playground
   return (
     <BrowserRouter>
       <div className="center"></div>
       <Container sx={containerStyle} maxWidth="xl" style={{ zIndex: 4 }}>
         <ThemeProvider theme={theme}>
+          <CssBaseline />
           <Header toggleTheme={toggleTheme} />
           <Box
             id="page_container"
@@ -52,6 +67,7 @@ const App = () => {
               <Route path={"/about"} element={<AboutMe />} />
               <Route path={"/contact"} element={<Contact />} />
             </Routes>
+            <button onClick={clickHandler}>click</button>
           </Box>
         </ThemeProvider>
       </Container>
