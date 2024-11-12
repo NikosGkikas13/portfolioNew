@@ -7,9 +7,9 @@ const boxStyle = {
   justifyContent: "center",
   height: "100%",
   flexDirection: "column",
-  position: "relative",
-  top: "-60px",
-  left: "10px",
+  // position: "relative",
+  // top: "-60px",
+  // left: "10px",
 };
 
 const PageHome = () => {

@@ -16,7 +16,6 @@ const AboutMe = () => {
         flexDirection: "column",
         alignItems: "center",
         gap: "40px",
-        marginTop: "18px",
         padding: "20px 0px",
         overflow: "auto",
         background: theme.palette.background.default,

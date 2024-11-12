@@ -9,25 +9,6 @@ import Contact from "./components/Contact.tsx";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useState } from "react";
 
-const containerStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  height: "700px",
-  gap: "20px",
-};
-const boxStyle = {
-  background: "#ffffffe8",
-  // width: "80%",
-  width: "900px",
-  height: "100%",
-  display: "flex",
-  // alignItems: window.location.href.includes("about") ? "start" : "center",
-  justifyContent: "center",
-  padding: "0px 20px",
-  color: "#000",
-};
-
 const App = () => {
   const [mode, setMode] = useState(false);
   const theme = createTheme({
@@ -37,6 +18,24 @@ const App = () => {
   });
   const toggleTheme = () => {
     setMode(!mode);
+  };
+  const containerStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    height: "700px",
+    gap: "20px",
+  };
+  const boxStyle = {
+    background: theme.palette.background.default,
+    // width: "80%",
+    width: "900px",
+    height: "100%",
+    display: "flex",
+    // alignItems: window.location.href.includes("about") ? "start" : "center",
+    justifyContent: "center",
+    padding: "0px 20px",
+    color: "#000",
   };
 
   return (
