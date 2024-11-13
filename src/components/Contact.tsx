@@ -1,14 +1,15 @@
 import { Box, Button, Container, TextField, useTheme } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MapComponent from "./MapComponent";
 
-const Contact = () => {
+const Contact = ({ showHeader }: { showHeader: () => void }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const theme = useTheme();
+  useEffect(() => showHeader());
 
   const style = {
     container: {

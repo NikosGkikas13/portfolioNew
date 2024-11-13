@@ -3,7 +3,8 @@ import React from "react";
 import astronaut from "../assets/astronaut.jpg";
 import SpaceCard from "./SpaceCard";
 
-const PageHome = () => {
+const PageHome = ({ hideHeader }: { hideHeader: () => void }) => {
+  hideHeader();
   return (
     <Box sx={{ height: "100%" }}>
       <Box sx={{ height: "50%", background: `url(${astronaut})` }}>top</Box>

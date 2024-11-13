@@ -1,20 +1,36 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { Box } from "@mui/material";
 import PageHome from "./components/PageHome";
+import { useState } from "react";
+import ServicePage from "./components/ServicePage";
+import AboutMe from "./components/AboutMe";
+import Contact from "./components/Contact";
 
 function App() {
+  const [showHeader, setShowHeader] = useState(true);
   return (
     <BrowserRouter>
       <Box sx={{ width: "1280px", height: "800px", background: "#716b6b" }}>
-        <Header />
+        <Header showHeader={showHeader} />
         <Routes>
-          <Route path={"/"} element={<PageHome />} />
-          <Route path={"/about"} element={<h1>about</h1>} />
-          <Route path={"/services"} element={<h1>services</h1>} />
-          <Route path={"/Portfolio"} element={<h1>portfolio</h1>} />
-          <Route path={"/contact"} element={<h1>contact</h1>} />
+          <Route
+            path={"/home"}
+            element={<PageHome hideHeader={() => setShowHeader(false)} />}
+          />
+          <Route
+            path={"/about"}
+            element={<AboutMe showHeader={() => setShowHeader(true)} />}
+          />
+          <Route
+            path={"/services"}
+            element={<ServicePage showHeader={() => setShowHeader(true)} />}
+          />
+          <Route
+            path={"/contact"}
+            element={<Contact showHeader={() => setShowHeader(true)} />}
+          />
         </Routes>
       </Box>
     </BrowserRouter>

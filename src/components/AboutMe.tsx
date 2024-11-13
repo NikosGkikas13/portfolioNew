@@ -1,12 +1,13 @@
 import { Container, useTheme } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 
 import ProgrammingSkills from "./ProgrammingSkills";
 import PersonalInfo from "./PersonalInfo";
 import HistoryTimeline from "./HistoryTimeline";
 
-const AboutMe = () => {
+const AboutMe = ({ showHeader }: { showHeader: () => void }) => {
   const theme = useTheme();
+  useEffect(() => showHeader());
   return (
     <Container
       id="about_me_container"
