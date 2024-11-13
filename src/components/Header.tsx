@@ -1,21 +1,32 @@
-import { AppBar, Box, Container, MenuItem, Toolbar, Typography } from "@mui/material";
-import AdbIcon from '@mui/icons-material/Adb';
-import { pages } from "../constants.ts";
+import { Box, MenuItem, Typography } from "@mui/material";
+import React from "react";
 import { Link } from "react-router-dom";
-import HeaderBottom from "./HeaderBottom.tsx";
+import { PAGES } from "../constants";
 
-
-const Header=()=>{
+const Header = () => {
   return (
-          <Box sx={{display:'flex',flexDirection:'column',alignItems:'center',gap:'50px',background:'#fff',width:'15%',height:'100%',justifyContent:'center'
-          }}>
-            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-            <Box sx={{display:'flex',flexDirection:'column',gap:'5px'}}>
-              {pages.map((page)=><MenuItem key={page.name}><Link to={page.link}><Typography >{page.name}</Typography></Link></MenuItem>)}
-            </Box>
-            <HeaderBottom/>
-            </Box>
-  )
-}
+    <div>
+      {" "}
+      <Box
+        sx={{
+          display: "flex",
+          position: "fixed",
+          top: "0",
+          justifyContent: "center",
+          left: 0,
+          right: 0,
+        }}
+      >
+        {PAGES.map((page) => (
+          <MenuItem key={page.name}>
+            <Link to={page.link}>
+              <Typography>{page.name}</Typography>
+            </Link>
+          </MenuItem>
+        ))}
+      </Box>
+    </div>
+  );
+};
 
-export default Header
+export default Header;
