@@ -1,29 +1,23 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import front_background from "../assets/front_background.jpg";
-
-const boxStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "100%",
-  flexDirection: "column",
-  // position: "relative",
-  // top: "-60px",
-  // left: "10px",
-};
+import { Box } from "@mui/material";
+import React from "react";
+import astronaut from "../assets/astronaut.jpg";
+import SpaceCard from "./SpaceCard";
 
 const PageHome = () => {
-  const theme = useTheme();
   return (
-    <Box id="home_container">
-      <Box sx={boxStyle} id="home">
-        <Typography variant="h2" style={{ color: theme.palette.primary.main }}>
-          NIKOS GKIKAS
-        </Typography>
-        <Typography variant="h5" style={{ color: theme.palette.primary.main }}>
-          Front end developer
-        </Typography>
-        {/* <img src={front_background} alt="pc image" /> */}
+    <Box sx={{ height: "100%" }}>
+      <Box sx={{ height: "50%", background: `url(${astronaut})` }}>top</Box>
+      <Box
+        sx={{
+          height: "50%",
+          display: "flex",
+          justifyContent: "space-evenly",
+          padding: "20px",
+        }}
+      >
+        <SpaceCard />
+        <SpaceCard />
+        <SpaceCard />
       </Box>
     </Box>
   );

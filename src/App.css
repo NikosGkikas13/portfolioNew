@@ -1,18 +1,8 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
-  overflow: hidden;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  overflow: hidden;
-  background-color: rgb(113, 85, 48);
 }
 
 .logo {
@@ -50,172 +40,10 @@ body {
 .read-the-docs {
   color: #888;
 }
-
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200");
-
 body {
-  background-image: url("./assets/clouds.jpg");
-  background-size: cover;
-  -webkit-animation: slidein 80s;
-  animation: slidein 80s;
-
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
+  background: rgb(18, 84, 107);
 }
-
-@-webkit-keyframes slidein {
-  from {
-    background-position: top;
-    background-size: 3000px;
-  }
-  to {
-    background-position: -100px 0px;
-    background-size: 2750px;
-  }
-}
-
-@keyframes slidein {
-  from {
-    background-position: top;
-    background-size: 3000px;
-  }
-  to {
-    background-position: -100px 0px;
-    background-size: 2750px;
-  }
-}
-
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(75, 195, 250, 0.3);
-  border-radius: 3px;
-}
-.center h1 {
-  text-align: center;
-  color: white;
-  font-family: "Source Code Pro", monospace;
-  text-transform: uppercase;
-}
-
-::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-
-#about_me_container {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-#home_container {
-  /* width: 100%; */
-  /* background: url("./assets/front_background.jpg") center no-repeat; */
-  /* background-size: cover; */
-}
-.css-jzcd7z-MuiFormControlLabel-root {
-  margin: 0 !important;
-}
-
-@media only screen and (max-width: 1024px) {
-  #root {
-    max-width: 100%;
-  }
-}
-@media only screen and (max-width: 768px) {
-  #page_container {
-    padding: 10px;
-  }
-  #services-padding-container {
-    padding: 20px 0px;
-  }
-  #services {
-    justify-content: flex-start;
-    overflow: auto;
-  }
-  #services ul {
-    padding: 0;
-  }
-  #services ul li {
-    max-width: 45%;
-  }
-  #services ul li p {
-    font-size: 0.8rem;
-  }
-  #about_me_container h5 {
-    font-size: 1rem;
-  }
-  #about_me_container h6 {
-    font-size: 0.8rem;
-  }
-  #about_me_container li {
-    height: 33%;
-  }
-  .css-46bh2p-MuiCardContent-root {
-    padding: 0 !important;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #home h2 {
-    font-size: 2rem;
-  }
-  #home h5 {
-    font-size: 1.2rem;
-  }
-  #services ul li {
-    max-width: 95%;
-  }
-  #about_me_container li {
-    height: auto;
-  }
-  .MuiTimeline-positionRight {
-    padding: 0 !important;
-  }
-  .css-qgrhvf-MuiTypography-root-MuiTimelineOppositeContent-root {
-    padding: 0px 16px 0px 0px !important;
-  }
-  .css-1allbak-MuiCardActions-root {
-    padding: 8px 0px !important;
-  }
-}
-@media only screen and (max-width: 400px) {
-  #home h2 {
-    font-size: 1.4rem;
-  }
-  #home h5 {
-    font-size: 1rem;
-  }
-  #services ul li span {
-    font-size: 0.8rem;
-  }
-  #services ul li p {
-    font-size: 0.7rem;
-  }
-  #services ul li hr {
-    font-size: 0.7rem;
-  }
-  .css-1dt5qps-MuiContainer-root {
-    gap: 0 !important;
-  }
-  #root {
-    padding: 0;
-  }
-  .css-db57k8 {
-    width: 70% !important;
-  }
-  .css-1apkmlw-MuiButtonBase-root-MuiButton-root {
-    font-size: 0.7rem !important;
-  }
+* {
+  padding: 0;
+  margin: 0;
 }
