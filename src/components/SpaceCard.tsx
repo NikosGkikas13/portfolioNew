@@ -6,28 +6,25 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-const SpaceCard = () => {
+type SpaceCardProps = {
+  name: string;
+  description?: string;
+  icon?: string;
+};
+
+const SpaceCard = ({ name, description, icon }: SpaceCardProps) => {
+  console.log(icon);
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-      />
+    <Card sx={{ maxWidth: 280, height: 300, paddingTop: "20px" }}>
+      <CardMedia component="img" alt="green iguana" image={icon} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {name}
         </Typography>
         <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {description}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 };

@@ -3,9 +3,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { PAGES } from "../constants";
 
-const Header = () => {
+const Header = ({ showHeader }: { showHeader: boolean }) => {
   return (
-    <div>
+    <div
+      style={{
+        display: !showHeader ? "none" : "block",
+      }}
+    >
       {" "}
       <Box
         sx={{

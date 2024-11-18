@@ -4,9 +4,9 @@ import { SERVICES } from "../constants";
 import Service from "./Service";
 import { ServiceType } from "../Types";
 
-const ServicePage = () => {
+const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
   const theme = useTheme();
-
+  React.useEffect(() => showHeader());
   const styleList = {
     display: "flex",
     flexWrap: "wrap",
