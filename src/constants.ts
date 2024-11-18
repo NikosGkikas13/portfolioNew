@@ -8,11 +8,37 @@ import { ServiceType } from "./Types";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
-export const PAGES = [
+import planet1 from "./assets/planet1.png";
+import planet2 from "./assets/planet2.png";
+import planet3 from "./assets/planet3.png";
+export const PAGES: {
+  name: string;
+  link: string;
+  description?: string;
+  icon?: string;
+}[] = [
   { name: "Home", link: "/home" },
-  { name: "Services", link: "/services" },
-  { name: "About", link: "/about" },
-  { name: "Contact", link: "/contact" },
+  {
+    name: "Services",
+    link: "/services",
+    description:
+      "From front-end design to seamless functionality, I bring ideas to life with precision and creativity.",
+    icon: planet1,
+  },
+  {
+    name: "About",
+    link: "/about",
+    description:
+      "Passionate front-end developer with a love for crafting visually appealing and functional digital experiences.",
+    icon: planet2,
+  },
+  {
+    name: "Contact",
+    link: "/contact",
+    description:
+      "Let’s collaborate to build something amazing! Feel free to reach out for project inquiries, partnerships, or just to say hello.",
+    icon: planet3,
+  },
 ];
 export const SERVICES: ServiceType[] = [
   {
