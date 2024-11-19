@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import React from "react";
 import astronaut from "../assets/astronaut.jpg";
 import SpaceCard from "./SpaceCard";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const PageHome = ({ hideHeader }: { hideHeader: () => void }) => {
   hideHeader();
-  console.log(PAGES);
+  const theme = useTheme();
   return (
     <Box sx={{ height: "100%" }}>
       <Box sx={{ height: "50%", background: `url(${astronaut})` }}>top</Box>
@@ -17,10 +17,11 @@ const PageHome = ({ hideHeader }: { hideHeader: () => void }) => {
           display: "flex",
           justifyContent: "space-evenly",
           alignItems: "center",
+          background: theme.palette.background.default,
         }}
       >
         {PAGES.filter((page) => page.name !== "Home").map((filteredPage) => (
-          <Link to={filteredPage.link}>
+          <Link to={filteredPage.link} key={filteredPage.name}>
             {" "}
             <SpaceCard
               name={filteredPage.name}
