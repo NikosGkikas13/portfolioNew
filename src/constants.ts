@@ -11,6 +11,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import planet1 from "./assets/planet1.png";
 import planet2 from "./assets/planet2.png";
 import planet3 from "./assets/planet3.png";
+export const welcomeText = {
+  title: "NIKOS GKIKAS",
+  subTitle: "Front end developer",
+};
 export const PAGES: {
   name: string;
   link: string;
