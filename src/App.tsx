@@ -7,10 +7,15 @@ import { useState } from "react";
 import ServicePage from "./components/ServicePage";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
+import { darkTheme, lightTheme } from "./themes";
+import { light } from "@mui/material/styles/createPalette";
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
-  const theme = createTheme();
+  // const theme = createTheme();
+  const [themeSwitch, setThemeSwitch] = useState(false);
+  const theme = themeSwitch ? lightTheme : darkTheme;
+  const switchTheme = () => setThemeSwitch(!themeSwitch);
   return (
     <BrowserRouter>
       <Box sx={{ width: "1280px", height: "800px", background: "#716b6b" }}>
@@ -19,7 +24,12 @@ function App() {
           <Routes>
             <Route
               path={"/home"}
-              element={<PageHome hideHeader={() => setShowHeader(false)} />}
+              element={
+                <PageHome
+                  hideHeader={() => setShowHeader(false)}
+                  switchTheme={switchTheme}
+                />
+              }
             />
             <Route
               path={"/about"}

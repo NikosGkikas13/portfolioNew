@@ -1,13 +1,20 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
 import astronaut from "../assets/astronaut.jpg";
 import SpaceCard from "./SpaceCard";
 import { PAGES, welcomeText } from "../constants";
 import { Link } from "react-router-dom";
+import ThemeSwitchButton from "./ThemeSwitchButton";
 
-const PageHome = ({ hideHeader }: { hideHeader: () => void }) => {
+type PageHomeProps = {
+  hideHeader: () => void;
+  switchTheme: () => void;
+};
+
+const PageHome = ({ hideHeader, switchTheme }: PageHomeProps) => {
   hideHeader();
   const theme = useTheme();
+
   return (
     <Box sx={{ height: "100%" }}>
       <Box
@@ -18,6 +25,7 @@ const PageHome = ({ hideHeader }: { hideHeader: () => void }) => {
           backgroundSize: "cover",
         }}
       >
+        {" "}
         <Box
           sx={{
             display: "flex",
@@ -27,12 +35,24 @@ const PageHome = ({ hideHeader }: { hideHeader: () => void }) => {
             width: "50%",
           }}
         >
-          <Typography variant="h2" sx={{ color: theme.palette.primary.main }}>
-            {welcomeText.title}
-          </Typography>
-          <Typography variant="h4" sx={{ color: theme.palette.secondary.main }}>
-            {welcomeText.subTitle}
-          </Typography>
+          <Box
+            sx={{
+              width: "500px",
+              margin: "0 auto",
+              borderRadius: "20px",
+              padding: "10px",
+              background: theme.palette.background.paper,
+              border: `2px solid ${theme.palette.primary.main}`,
+            }}
+          >
+            <Typography variant="h2" sx={{ color: theme.palette.primary.main }}>
+              {welcomeText.title}
+            </Typography>
+            <Typography variant="h4" sx={{ color: theme.palette.primary.main }}>
+              {welcomeText.subTitle}
+            </Typography>
+            <ThemeSwitchButton toggle={switchTheme} />
+          </Box>
         </Box>
       </Box>
       <Box
