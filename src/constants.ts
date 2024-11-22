@@ -53,7 +53,7 @@ export const SERVICES: ServiceType[] = [
   },
   {
     icon: DevicesIcon,
-    title: " Responsive Design and Mobile Optimization",
+    title: " Responsive Design ",
     subtitle:
       "Creating websites that provide an optimal viewing experience across a variety of devices and screen sizes.",
   },

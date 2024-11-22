@@ -1,8 +1,17 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Icon,
+  List,
+  ListItemButton,
+  ListItemText,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import React from "react";
 import astronaut from "../assets/astronaut.jpg";
 import SpaceCard from "./SpaceCard";
-import { PAGES, welcomeText } from "../constants";
+import { PAGES, SOCIALS, welcomeText } from "../constants";
 import { Link } from "react-router-dom";
 import ThemeSwitchButton from "./ThemeSwitchButton";
 
@@ -51,6 +60,24 @@ const PageHome = ({ hideHeader, switchTheme }: PageHomeProps) => {
             <Typography variant="h4" sx={{ color: theme.palette.primary.main }}>
               {welcomeText.subTitle}
             </Typography>
+            <List
+              sx={{
+                display: "flex",
+                maxWidth: "200px",
+                margin: "0 auto",
+                color: theme.palette.primary.main,
+              }}
+            >
+              {SOCIALS.map((social) => (
+                <ListItemButton
+                  component="a"
+                  href={social.link}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
+                  <social.icon />
+                </ListItemButton>
+              ))}
+            </List>
             <ThemeSwitchButton toggle={switchTheme} />
           </Box>
         </Box>

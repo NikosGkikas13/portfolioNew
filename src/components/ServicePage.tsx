@@ -7,11 +7,13 @@ import { ServiceType } from "../Types";
 const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
   const theme = useTheme();
   React.useEffect(() => showHeader());
+
   const styleList = {
     display: "flex",
     flexWrap: "wrap",
-    gap: "10px",
+    gap: "40px",
     justifyContent: "center",
+    flexDirection: "column",
   };
 
   const boxStyle = {
@@ -19,15 +21,24 @@ const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
     alignItems: "center",
     justifyContent: "center",
     height: "100%",
-    flexDirection: "column",
     background: theme.palette.background.default,
+    padding: 3,
   };
   return (
     <Box id="services-padding-container">
       <Box sx={boxStyle} id="services">
         <List sx={styleList}>
-          {SERVICES.map((service: ServiceType) => {
-            return <Service key={service.title} service={service} />;
+          {SERVICES.map((service: ServiceType, index) => {
+            return index % 2 ? (
+              <Service key={service.title} service={service} />
+            ) : null;
+          })}
+        </List>
+        <List sx={{ ...styleList, alignItems: "end" }}>
+          {SERVICES.map((service: ServiceType, index) => {
+            return index % 2 ? null : (
+              <Service key={service.title} service={service} />
+            );
           })}
         </List>
       </Box>

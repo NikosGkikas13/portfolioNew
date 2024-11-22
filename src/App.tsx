@@ -18,7 +18,7 @@ function App() {
   const switchTheme = () => setThemeSwitch(!themeSwitch);
   return (
     <BrowserRouter>
-      <Box sx={{ width: "1280px", height: "800px", background: "#716b6b" }}>
+      <Box sx={{ width: "1280px", height: "1000px", background: "#716b6b" }}>
         <ThemeProvider theme={theme}>
           <Header showHeader={showHeader} />
           <Routes>

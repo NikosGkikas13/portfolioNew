@@ -51,3 +51,7 @@ body {
   max-width: 100px;
   margin: 0 auto;
 }
+/* disable background colour on hover of social media icons */
+.css-b8kjv1-MuiButtonBase-root-MuiListItemButton-root:hover {
+  background-color: transparent !important;
+}

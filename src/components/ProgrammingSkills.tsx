@@ -43,7 +43,6 @@ const ProgrammingSkills = () => {
                   <CardMedia
                     component="img"
                     image={ReactIcon}
-                    alt="green iguana"
                     sx={{
                       width: "50%",
                       margin: "0 auto",

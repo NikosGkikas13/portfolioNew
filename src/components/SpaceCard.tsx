@@ -39,7 +39,7 @@ const SpaceCard = ({ name, description, icon }: SpaceCardProps) => {
           </Typography>
           <Typography
             variant="body2"
-            sx={{ color: theme.palette.secondary.main }}
+            sx={{ color: theme.palette.primary.main }}
           >
             {description}
           </Typography>
