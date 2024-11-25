@@ -20,7 +20,7 @@ function App() {
     <BrowserRouter>
       <Box sx={{ width: "1280px", height: "1000px", background: "#716b6b" }}>
         <ThemeProvider theme={theme}>
-          <Header showHeader={showHeader} />
+          <Header showHeader={showHeader} switchTheme={switchTheme} />
           <Routes>
             <Route
               path={"/home"}

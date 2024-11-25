@@ -21,6 +21,7 @@ const Service = ({ service }: { service: ServiceType }) => {
     maxWidth: "50%",
     padding: 0,
     borderRadius: 2,
+    background: theme.palette.mode === "light" ? "#fff" : "#000000c7",
   };
 
   return (
@@ -54,7 +55,9 @@ const Service = ({ service }: { service: ServiceType }) => {
 
       <ListItemText
         disableTypography
-        sx={{ padding: 1 }}
+        sx={{
+          padding: 1,
+        }}
         primary={
           <Typography
             variant="h6"

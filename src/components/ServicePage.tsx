@@ -3,7 +3,7 @@ import * as React from "react";
 import { SERVICES } from "../constants";
 import Service from "./Service";
 import { ServiceType } from "../Types";
-
+import services from "../assets/services.jpg";
 const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
   const theme = useTheme();
   React.useEffect(() => showHeader());
@@ -21,11 +21,13 @@ const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
     alignItems: "center",
     justifyContent: "center",
     height: "100%",
-    background: theme.palette.background.default,
     padding: 3,
   };
   return (
-    <Box id="services-padding-container">
+    <Box
+      id="services-padding-container"
+      sx={{ background: `url(${services})`, backgroundSize: "cover" }}
+    >
       <Box sx={boxStyle} id="services">
         <List sx={styleList}>
           {SERVICES.map((service: ServiceType, index) => {
