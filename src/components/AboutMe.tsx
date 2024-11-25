@@ -1,15 +1,14 @@
-import { Container, useTheme } from "@mui/material";
-import React, { useEffect } from "react";
+import { Box, useTheme } from "@mui/material";
+import { useEffect } from "react";
 
 import ProgrammingSkills from "./ProgrammingSkills";
 import PersonalInfo from "./PersonalInfo";
 import HistoryTimeline from "./HistoryTimeline";
-
+import services from "../assets/services.jpg";
 const AboutMe = ({ showHeader }: { showHeader: () => void }) => {
-  const theme = useTheme();
   useEffect(() => showHeader());
   return (
-    <Container
+    <Box
       id="about_me_container"
       sx={{
         display: "flex",
@@ -19,13 +18,14 @@ const AboutMe = ({ showHeader }: { showHeader: () => void }) => {
         gap: "40px",
         padding: "20px 0px",
         overflow: "auto",
-        background: theme.palette.background.default,
+        background: `url(${services})`,
+        backgroundSize: "cover",
       }}
     >
       <PersonalInfo />
       <ProgrammingSkills />
       <HistoryTimeline />
-    </Container>
+    </Box>
   );
 };
 

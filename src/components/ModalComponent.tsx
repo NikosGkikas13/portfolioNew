@@ -5,19 +5,6 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Divider, List, ListItem, useTheme } from "@mui/material";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-  textAlign: "center",
-};
-
 export const ModalComponent = ({
   programmingLanguage,
 }: {
@@ -28,6 +15,20 @@ export const ModalComponent = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const theme = useTheme();
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: `2px solid ${theme.palette.primary.main}`,
+    boxShadow: 24,
+    p: 4,
+    textAlign: "center",
+    background: theme.palette.background.default,
+  };
   return (
     <div>
       <Button onClick={handleOpen}>Open modal</Button>
@@ -46,7 +47,7 @@ export const ModalComponent = ({
           >
             {title}
           </Typography>
-          <Divider />
+          <Divider sx={{ background: theme.palette.primary.main }} />
           <Typography
             id="modal-modal-description"
             sx={{ mt: 2, color: theme.palette.primary.main }}

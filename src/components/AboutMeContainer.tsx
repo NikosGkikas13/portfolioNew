@@ -14,6 +14,7 @@ const AboutMeContainer = ({
     maxWidth: "700px",
     padding: "20px",
     width: "100%",
+    background: theme.palette.mode === "light" ? "#fff" : "#000000c7",
   };
 
   const aboutMeTitleStyle = {

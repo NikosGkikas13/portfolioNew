@@ -1,6 +1,8 @@
 import React from "react";
 import AboutMeContainer from "./AboutMeContainer";
 import ReactIcon from "../assets/react.png";
+import react from "../assets/react.png";
+import js from "../assets/js.webp";
 import {
   Box,
   Button,
@@ -24,7 +26,7 @@ const ProgrammingSkills = () => {
         <Typography variant="h5" style={{ color: theme.palette.primary.main }}>
           PROGRAMMING SKILLS
         </Typography>
-        {/* <Typography variant="h6">click on card for more info</Typography> */}
+
         <List
           sx={{
             display: "flex",
@@ -39,14 +41,21 @@ const ProgrammingSkills = () => {
                 key={item.title}
                 sx={{ maxWidth: window.innerWidth > 600 ? "30%" : "50%" }}
               >
-                <Card>
+                <Card
+                  sx={{
+                    background: "#16a9ed",
+                    border: `2px solid ${theme.palette.primary.main}`,
+                    height: "220px",
+                  }}
+                >
                   <CardMedia
                     component="img"
-                    image={ReactIcon}
+                    image={item.icon}
                     sx={{
-                      width: "50%",
+                      height: "50px",
                       margin: "0 auto",
                       padding: "5px",
+                      width: "auto",
                     }}
                   />
                   <CardContent>

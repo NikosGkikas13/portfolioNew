@@ -11,6 +11,15 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import planet1 from "./assets/planet1.png";
 import planet2 from "./assets/planet2.png";
 import planet3 from "./assets/planet3.png";
+import react from "./assets/react.png";
+import js from "./assets/js.webp";
+import wp from "./assets/wordpress.png";
+import jquery from "./assets/jquyry.webp";
+import php from "./assets/php.png";
+import html5 from "./assets/html5.png";
+import css3 from "./assets/css3.png";
+import c from "./assets/c.png";
+
 export const welcomeText = {
   title: "NIKOS GKIKAS",
   subTitle: "Front end developer",
@@ -86,6 +95,7 @@ export const programmingLanguages = [
   {
     title: "Javascript",
     skills: ["Rest API", "Async Fetching", "ES6"],
+    icon: js,
   },
   {
     title: "React",
@@ -96,15 +106,21 @@ export const programmingLanguages = [
       "Axios",
       "Context",
     ],
+    icon: react,
   },
-  { title: "Jquery", skills: ["Rest API", "Async Fetching", "AJAX"] },
+  {
+    title: "Jquery",
+    skills: ["Rest API", "Async Fetching", "AJAX"],
+    icon: jquery,
+  },
   {
     title: "PHP",
     skills: ["Vanilla PHP", "Database connection", "Laravel familiarity"],
+    icon: php,
   },
-  { title: "Wordpress", skills: ["Theme Development"] },
-  { title: "HTML5", skills: [] },
-  { title: "CSS3", skills: [] },
+  { title: "Wordpress", skills: ["Theme Development"], icon: wp },
+  { title: "HTML5", skills: [], icon: html5 },
+  { title: "CSS3", skills: [], icon: css3 },
   {
     title: "C",
     skills: [
@@ -115,6 +131,7 @@ export const programmingLanguages = [
       "Graphs",
       "Lists / Stacks",
     ],
+    icon: c,
   },
 ];
 export const aboutMeData = {
