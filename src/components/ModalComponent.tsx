@@ -25,13 +25,20 @@ export const ModalComponent = ({
     bgcolor: "background.paper",
     border: `2px solid ${theme.palette.primary.main}`,
     boxShadow: 24,
-    p: 4,
     textAlign: "center",
     background: theme.palette.background.default,
+    padding: 3,
+    borderRadius: 3,
   };
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button
+        onClick={handleOpen}
+        variant="contained"
+        sx={{ background: "#16a9ed", color: theme.palette.primary.main }}
+      >
+        show more
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}

@@ -1,11 +1,7 @@
-import React from "react";
 import AboutMeContainer from "./AboutMeContainer";
-import ReactIcon from "../assets/react.png";
-import react from "../assets/react.png";
-import js from "../assets/js.webp";
+import ambient from "../assets/ambient.jpg";
 import {
   Box,
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -43,12 +39,12 @@ const ProgrammingSkills = () => {
               >
                 <Card
                   sx={{
-                    background: "#16a9ed",
                     border: `2px solid ${theme.palette.primary.main}`,
-                    padding: 1,
                     height: "220px",
                     width: "100%",
                     borderRadius: 3,
+                    background: `url(${ambient})`,
+                    backgroundPosition: "left",
                   }}
                 >
                   <CardMedia
@@ -59,6 +55,8 @@ const ProgrammingSkills = () => {
                       margin: "0 auto",
                       padding: "5px",
                       width: "auto",
+                      position: "relative",
+                      top: "35px",
                     }}
                   />
                   <CardContent>
@@ -71,6 +69,7 @@ const ProgrammingSkills = () => {
                         fontSize:
                           window.innerWidth > 768 ? "undefined" : "1rem",
                         color: theme.palette.primary.main,
+                        padding: 1,
                       }}
                     >
                       {item.title}
