@@ -1,8 +1,9 @@
 import { Box, Button, Container, TextField, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import MapComponent from "./MapComponent";
+import services from "../assets/services.jpg";
 
-const Contact = ({ showHeader }: { showHeader: () => void }) => {
+const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -14,11 +15,19 @@ const Contact = ({ showHeader }: { showHeader: () => void }) => {
   const style = {
     container: {
       display: "flex",
-      justifyContent: "space-around",
+      justifyContent: "center",
       flexDirection: "column",
       alignItems: "center",
-      padding: "20px 0px",
-      background: theme.palette.background.default,
+      background: `url(${services})`,
+      height: "90%",
+      gap: "50px",
+    },
+    form: {
+      width: "80%",
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "10px",
+      justifyContent: "center",
     },
     input: {
       width: "45%",
@@ -49,17 +58,9 @@ const Contact = ({ showHeader }: { showHeader: () => void }) => {
   };
 
   return (
-    <Container sx={style.container}>
+    <Box sx={style.container}>
       <MapComponent />
-      <form
-        style={{
-          width: "80%",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "10px",
-          justifyContent: "center",
-        }}
-      >
+      <form style={style.form}>
         <Box
           sx={{
             width: "100%",
@@ -106,8 +107,8 @@ const Contact = ({ showHeader }: { showHeader: () => void }) => {
           submit
         </Button>
       </form>
-    </Container>
+    </Box>
   );
 };
 
-export default Contact;
+export default ContactPage;

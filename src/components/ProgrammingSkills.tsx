@@ -45,7 +45,10 @@ const ProgrammingSkills = () => {
                   sx={{
                     background: "#16a9ed",
                     border: `2px solid ${theme.palette.primary.main}`,
+                    padding: 1,
                     height: "220px",
+                    width: "100%",
+                    borderRadius: 3,
                   }}
                 >
                   <CardMedia

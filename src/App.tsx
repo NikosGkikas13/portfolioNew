@@ -5,8 +5,8 @@ import { Box, createTheme, ThemeProvider } from "@mui/material";
 import PageHome from "./components/PageHome";
 import { useState } from "react";
 import ServicePage from "./components/ServicePage";
-import AboutMe from "./components/AboutMe";
-import Contact from "./components/Contact";
+import AboutMePage from "./components/AboutMePage";
+import ContactPage from "./components/ContactPage";
 import { darkTheme, lightTheme } from "./themes";
 import { light } from "@mui/material/styles/createPalette";
 
@@ -16,9 +16,15 @@ function App() {
   const [themeSwitch, setThemeSwitch] = useState(false);
   const theme = themeSwitch ? lightTheme : darkTheme;
   const switchTheme = () => setThemeSwitch(!themeSwitch);
+  const boxStyle = {
+    width: "1280px",
+    height: "100vh",
+    background: "#716b6b",
+    overflow: "scroll",
+  };
   return (
     <BrowserRouter>
-      <Box sx={{ width: "1280px", height: "1000px", background: "#716b6b" }}>
+      <Box sx={boxStyle}>
         <ThemeProvider theme={theme}>
           <Header showHeader={showHeader} switchTheme={switchTheme} />
           <Routes>
@@ -33,7 +39,7 @@ function App() {
             />
             <Route
               path={"/about"}
-              element={<AboutMe showHeader={() => setShowHeader(true)} />}
+              element={<AboutMePage showHeader={() => setShowHeader(true)} />}
             />
             <Route
               path={"/services"}
@@ -41,7 +47,7 @@ function App() {
             />
             <Route
               path={"/contact"}
-              element={<Contact showHeader={() => setShowHeader(true)} />}
+              element={<ContactPage showHeader={() => setShowHeader(true)} />}
             />
           </Routes>
         </ThemeProvider>

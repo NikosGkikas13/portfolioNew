@@ -17,6 +17,7 @@ const Header = ({
       style={{
         display: !showHeader ? "none" : "block",
         background: theme.palette.mode === "dark" ? "#0f0f0f79" : "#ffffff89",
+        height: "10%",
       }}
     >
       {" "}

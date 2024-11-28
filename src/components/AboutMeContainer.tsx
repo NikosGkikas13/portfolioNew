@@ -15,6 +15,7 @@ const AboutMeContainer = ({
     padding: "20px",
     width: "100%",
     background: theme.palette.mode === "light" ? "#fff" : "#000000c7",
+    borderRadius: 3,
   };
 
   const aboutMeTitleStyle = {

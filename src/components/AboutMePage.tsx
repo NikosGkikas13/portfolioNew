@@ -20,6 +20,7 @@ const AboutMe = ({ showHeader }: { showHeader: () => void }) => {
         overflow: "auto",
         background: `url(${services})`,
         backgroundSize: "cover",
+        height: "90%",
       }}
     >
       <PersonalInfo />

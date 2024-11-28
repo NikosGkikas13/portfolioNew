@@ -20,7 +20,7 @@ const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "100%",
+    height: "90%",
     padding: 3,
   };
   return (
