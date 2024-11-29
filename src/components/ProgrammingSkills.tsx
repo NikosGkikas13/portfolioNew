@@ -78,7 +78,7 @@ const ProgrammingSkills = () => {
                   <CardActions
                     sx={{ display: "flex", justifyContent: "center" }}
                   >
-                    <ModalComponent programmingLanguage={item} />
+                    <ModalComponent programmingLanguage={item.modal} />
                   </CardActions>
                 </Card>
               </ListItem>

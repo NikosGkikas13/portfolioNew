@@ -8,9 +8,8 @@ import { Divider, List, ListItem, useTheme } from "@mui/material";
 export const ModalComponent = ({
   programmingLanguage,
 }: {
-  programmingLanguage: { title: string; skills: string[] };
+  programmingLanguage: string;
 }) => {
-  const { title, skills } = programmingLanguage;
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -21,7 +20,7 @@ export const ModalComponent = ({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: 700,
     bgcolor: "background.paper",
     border: `2px solid ${theme.palette.primary.main}`,
     boxShadow: 24,
@@ -46,25 +45,7 @@ export const ModalComponent = ({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography
-            id="modal-modal-title"
-            variant="h6"
-            component="h2"
-            style={{ color: theme.palette.primary.main }}
-          >
-            {title}
-          </Typography>
-          <Divider sx={{ background: theme.palette.primary.main }} />
-          <Typography
-            id="modal-modal-description"
-            sx={{ mt: 2, color: theme.palette.primary.main }}
-          >
-            <List>
-              {skills.map((skill: string) => (
-                <ListItem key={skill}>{skill}</ListItem>
-              ))}
-            </List>
-          </Typography>
+          <img style={{ width: "100%" }} src={programmingLanguage} alt="" />
         </Box>
       </Modal>
     </div>

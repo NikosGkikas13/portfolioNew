@@ -19,6 +19,14 @@ import php from "./assets/php.png";
 import html5 from "./assets/html5.png";
 import css3 from "./assets/css3.png";
 import c from "./assets/c.png";
+import javascriptModal from "./assets/skills/javascript.png";
+import reactModal from "./assets/skills/react.png";
+import phpModal from "./assets/skills/php.png";
+import wordpressModal from "./assets/skills/wordpress.png";
+import htmlModal from "./assets/skills/html.png";
+import cssModal from "./assets/skills/css.png";
+import jQueryModal from "./assets/skills/jQuery.png";
+import cModal from "./assets/skills/c.png";
 
 export const welcomeText = {
   title: "NIKOS GKIKAS",
@@ -94,44 +102,35 @@ export const SERVICES: ServiceType[] = [
 export const programmingLanguages = [
   {
     title: "Javascript",
-    skills: ["Rest API", "Async Fetching", "ES6"],
     icon: js,
+    modal: javascriptModal,
   },
   {
     title: "React",
-    skills: [
-      "Redux / Redux Toolkit",
-      "Styled Components",
-      "GraphQL / ApolloClient",
-      "Axios",
-      "Context",
-    ],
     icon: react,
+    modal: reactModal,
   },
   {
     title: "Jquery",
-    skills: ["Rest API", "Async Fetching", "AJAX"],
     icon: jquery,
+    modal: jQueryModal,
   },
   {
     title: "PHP",
-    skills: ["Vanilla PHP", "Database connection", "Laravel familiarity"],
     icon: php,
+    modal: phpModal,
   },
-  { title: "Wordpress", skills: ["Theme Development"], icon: wp },
-  { title: "HTML5", skills: [], icon: html5 },
-  { title: "CSS3", skills: [], icon: css3 },
+  {
+    title: "Wordpress",
+    icon: wp,
+    modal: wordpressModal,
+  },
+  { title: "HTML5", icon: html5, modal: htmlModal },
+  { title: "CSS3", icon: css3, modal: cssModal },
   {
     title: "C",
-    skills: [
-      "Functions",
-      "Structures",
-      "Pointers",
-      "Trees",
-      "Graphs",
-      "Lists / Stacks",
-    ],
     icon: c,
+    modal: cModal,
   },
 ];
 export const aboutMeData = {
