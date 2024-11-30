@@ -1,14 +1,14 @@
 import "./App.css";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import "./responsive.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import PageHome from "./components/PageHome";
 import { useState } from "react";
 import ServicePage from "./components/ServicePage";
 import AboutMePage from "./components/AboutMePage";
 import ContactPage from "./components/ContactPage";
 import { darkTheme, lightTheme } from "./themes";
-import { light } from "@mui/material/styles/createPalette";
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
@@ -17,7 +17,6 @@ function App() {
   const theme = themeSwitch ? lightTheme : darkTheme;
   const switchTheme = () => setThemeSwitch(!themeSwitch);
   const boxStyle = {
-    width: "1280px",
     height: "100vh",
     background: "#716b6b",
     overflow: "scroll",
