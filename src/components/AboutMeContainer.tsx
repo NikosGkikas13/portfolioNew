@@ -21,9 +21,10 @@ const AboutMeContainer = ({
   const aboutMeTitleStyle = {
     position: "relative",
     top: "-38px",
-    background: "antiquewhite",
+    background: "#ff9200",
     width: "fit-content",
     padding: "5px",
+    color: theme.palette.primary.main,
   };
   return (
     <Box sx={aboutMeStyle}>

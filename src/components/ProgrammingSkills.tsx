@@ -1,5 +1,6 @@
 import AboutMeContainer from "./AboutMeContainer";
 import ambient from "../assets/ambient.jpg";
+import purple from "../assets/purple.jpg";
 import {
   Box,
   Card,
@@ -43,7 +44,7 @@ const ProgrammingSkills = () => {
                     height: "220px",
                     width: "100%",
                     borderRadius: 3,
-                    background: `url(${ambient})`,
+                    background: `url(${purple})`,
                     backgroundPosition: "left",
                   }}
                 >

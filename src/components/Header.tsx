@@ -3,7 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { PAGES } from "../constants";
 import ThemeSwitchButton from "./ThemeSwitchButton";
-
+import header1 from "../assets/header1.jpg";
+import header2 from "../assets/header2.jpg";
+import header3 from "../assets/header3.jpg";
+import header4 from "../assets/header4.jpg";
 const Header = ({
   showHeader,
   switchTheme,
@@ -16,8 +19,13 @@ const Header = ({
     <div
       style={{
         display: !showHeader ? "none" : "block",
-        background: theme.palette.mode === "dark" ? "#0f0f0f79" : "#ffffff89",
+
+        // background: `url(${header4})`,
+        // backgroundRepeat: "no-repeat",
+        // backgroundSize: "cover",
         height: "10%",
+        background:
+          "linear-gradient(270deg, rgba(222,0,255,1) 0%, rgba(72,171,224,1) 100%)",
       }}
     >
       {" "}
@@ -33,7 +41,9 @@ const Header = ({
         {PAGES.map((page) => (
           <MenuItem key={page.name}>
             <Link to={page.link}>
-              <Typography>{page.name}</Typography>
+              <Typography sx={{ color: theme.palette.primary.main }}>
+                {page.name}
+              </Typography>
             </Link>
           </MenuItem>
         ))}
