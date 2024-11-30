@@ -11,7 +11,7 @@ import {
 import React from "react";
 import astronaut from "../assets/astronaut.jpg";
 import SpaceCard from "./SpaceCard";
-import { PAGES, SOCIALS, welcomeText } from "../constants";
+import { isDesktop, PAGES, SOCIALS, welcomeText } from "../constants";
 import { Link } from "react-router-dom";
 import ThemeSwitchButton from "./ThemeSwitchButton";
 
@@ -45,8 +45,9 @@ const PageHome = ({ hideHeader, switchTheme }: PageHomeProps) => {
           }}
         >
           <Box
+            id="homeInfo"
             sx={{
-              width: "500px",
+              width: isDesktop ? "500px" : "auto",
               margin: "0 auto",
               borderRadius: "20px",
               padding: "10px",
