@@ -1,4 +1,5 @@
 import "./App.css";
+import "./Animation.css";
 import "./responsive.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
@@ -9,6 +10,7 @@ import ServicePage from "./components/ServicePage";
 import AboutMePage from "./components/AboutMePage";
 import ContactPage from "./components/ContactPage";
 import { darkTheme, lightTheme } from "./themes";
+import { isMobile } from "./constants";
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
@@ -17,7 +19,7 @@ function App() {
   const theme = themeSwitch ? lightTheme : darkTheme;
   const switchTheme = () => setThemeSwitch(!themeSwitch);
   const boxStyle = {
-    height: "100vh",
+    height: !isMobile ? "100vh" : undefined,
     background: "#716b6b",
     overflow: "scroll",
   };

@@ -163,6 +163,7 @@ export const historyData = [
   },
 ];
 export const isDesktop = window.innerWidth > 1024;
+export const isMobile = window.innerWidth < 600;
 export const SOCIALS = [
   {
     link: "https://www.linkedin.com/in/nikos-gkikas-7b250b1b0",

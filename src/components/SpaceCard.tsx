@@ -5,9 +5,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import "../Animation.css";
+
 import { useTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
+import { isMobile } from "../constants";
 type SpaceCardProps = {
   name: string;
   description?: string;
@@ -17,12 +18,14 @@ type SpaceCardProps = {
 const SpaceCard = ({ name, description, icon }: SpaceCardProps) => {
   const theme = useTheme();
   return (
-    <Box className="glow-on-hover" sx={{ height: 300 }}>
+    <Box className="glow-on-hover" sx={{ height: !isMobile ? 300 : 180 }}>
       <Card
         sx={{
+          display: isMobile ? "flex" : undefined,
+          alignItems: "center",
           background: theme.palette.background.default,
           maxWidth: 280,
-          height: 280,
+          height: !isMobile ? 280 : 160,
           paddingTop: "20px",
           boxShadow: `0px 0px 10px 10px linear-gradient(90deg, rgba(242,46,235,0.8575805322128851) 0%, rgba(0,212,255,0.8603816526610644)`,
         }}
@@ -32,7 +35,7 @@ const SpaceCard = ({ name, description, icon }: SpaceCardProps) => {
           <Typography
             gutterBottom
             variant="h5"
-            component="div"
+            // component="div"
             sx={{ color: theme.palette.primary.main }}
           >
             {name}

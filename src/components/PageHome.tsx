@@ -10,8 +10,9 @@ import {
 } from "@mui/material";
 import React from "react";
 import astronaut from "../assets/astronaut.jpg";
+import astronautMobile from "../assets/astronaut_mobile.jpeg";
 import SpaceCard from "./SpaceCard";
-import { isDesktop, PAGES, SOCIALS, welcomeText } from "../constants";
+import { isDesktop, isMobile, PAGES, SOCIALS, welcomeText } from "../constants";
 import { Link } from "react-router-dom";
 import ThemeSwitchButton from "./ThemeSwitchButton";
 
@@ -28,26 +29,27 @@ const PageHome = ({ hideHeader, switchTheme }: PageHomeProps) => {
     <Box sx={{ height: "100%" }}>
       <Box
         sx={{
-          height: "50%",
-          background: `url(${astronaut})`,
-          backgroundPosition: "100% 25%",
+          height: !isMobile ? "50%" : "50vh",
+          background: `url(${!isMobile ? astronaut : astronautMobile})`,
+          backgroundPosition: !isMobile ? "100% 25%" : "center",
           backgroundSize: "cover",
+          paddingBottom: !isMobile ? 0 : "20px",
         }}
       >
         {" "}
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: !isMobile ? "center" : "end",
             flexDirection: "column",
             height: "100%",
-            width: "50%",
+            width: !isMobile ? "50%" : "100%",
           }}
         >
           <Box
             id="homeInfo"
             sx={{
-              width: isDesktop ? "500px" : "auto",
+              width: isDesktop ? "500px" : isMobile ? "70%" : "auto",
               margin: "0 auto",
               borderRadius: "20px",
               padding: "10px",
@@ -90,6 +92,9 @@ const PageHome = ({ hideHeader, switchTheme }: PageHomeProps) => {
           justifyContent: "space-evenly",
           alignItems: "center",
           background: theme.palette.background.default,
+          flexDirection: !isMobile ? "row" : "column",
+          gap: !isMobile ? "0px" : "30px",
+          padding: isMobile ? "20px 0px" : undefined,
         }}
       >
         {PAGES.filter((page) => page.name !== "Home").map((filteredPage) => (

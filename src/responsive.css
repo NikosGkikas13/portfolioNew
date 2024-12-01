@@ -11,3 +11,40 @@
     width: 190px;
   }
 }
+@media only screen and (max-width: 768px) {
+  #homeInfo h2 {
+    font-size: 2rem;
+  }
+  #homeInfo h4 {
+    font-size: 1.2rem;
+  }
+  .glow-on-hover {
+    width: 160px;
+  }
+  .glow-on-hover h5 {
+    font-size: 1.2rem;
+  }
+  .glow-on-hover p {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #homeInfo h2 {
+    font-size: 1.5rem;
+  }
+  #homeInfo h4 {
+    font-size: 0.9rem;
+  }
+  #homeInfo > ul {
+    padding: 0;
+  }
+  .glow-on-hover {
+    width: 100%;
+  }
+  .glow-on-hover h5 {
+    font-size: 1.2rem;
+  }
+  .glow-on-hover p {
+    font-size: 0.8rem;
+  }
+}
