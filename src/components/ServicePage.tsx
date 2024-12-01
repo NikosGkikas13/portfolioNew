@@ -1,6 +1,6 @@
 import { Box, List, useTheme } from "@mui/material";
 import * as React from "react";
-import { SERVICES } from "../constants";
+import { isMobile, SERVICES } from "../constants";
 import Service from "./Service";
 import { ServiceType } from "../Types";
 import services from "../assets/services.jpg";
@@ -14,19 +14,25 @@ const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
     gap: "40px",
     justifyContent: "center",
     flexDirection: "column",
+    maxWidth: "400px",
   };
 
   const boxStyle = {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     height: "90%",
-    padding: 3,
+    padding: 5,
+    flexDirection: !isMobile ? "row" : "column",
   };
   return (
     <Box
       id="services-padding-container"
-      sx={{ background: `url(${services})`, backgroundSize: "cover" }}
+      sx={{
+        background: `url(${services})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       <Box sx={boxStyle} id="services">
         <List sx={styleList}>

@@ -18,10 +18,11 @@ const Service = ({ service }: { service: ServiceType }) => {
     border: "2px solid #48abe0",
     boxShadow: "0 0 20px 5px #48abe0",
     flexDirection: "column",
-    maxWidth: "50%",
+    maxWidth: "100%",
     padding: 0,
     borderRadius: 2,
     background: theme.palette.mode === "light" ? "#fff" : "#000000c7",
+    height: "270px",
   };
 
   return (
@@ -44,7 +45,7 @@ const Service = ({ service }: { service: ServiceType }) => {
           disableTypography
           primary={
             <Typography
-              variant="h6"
+              variant="h5"
               style={{ color: theme.palette.primary.main }}
             >
               {title}
