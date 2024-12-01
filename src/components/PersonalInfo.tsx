@@ -1,6 +1,13 @@
 import React from "react";
 import AboutMeContainer from "./AboutMeContainer";
-import { Divider, List, ListItem, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Divider,
+  List,
+  ListItem,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { aboutMeData } from "../constants";
 
 const PersonalInfo = () => {
@@ -11,46 +18,52 @@ const PersonalInfo = () => {
   };
   return (
     <AboutMeContainer title="ABOUT ME">
-      <Typography variant="h5" style={{ color: theme.palette.primary.main }}>
-        {aboutMeData.whoAmI}
-      </Typography>
-      <Divider sx={dividerStyle} flexItem variant="fullWidth" />
-      <List
-        sx={{
-          display: "flex",
-          flexDirection: window.innerWidth > 500 ? "column" : "row",
-          flexWrap: "wrap",
-          height: "180px",
-          color: theme.palette.primary.main,
-        }}
-      >
-        {Object.entries(aboutMeData).map((item) => {
-          if (item[0] !== "whoAmI")
-            return (
-              <ListItem
-                sx={{
-                  width: window.innerWidth > 500 ? "50%" : "100%",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-                key={item[0]}
-              >
-                <Typography
-                  variant="h6"
-                  style={{ color: theme.palette.primary.main }}
+      <Box>
+        <Typography
+          variant="h5"
+          style={{ color: theme.palette.primary.main }}
+          id="whoAmIText"
+        >
+          {aboutMeData.whoAmI}
+        </Typography>
+        <Divider sx={dividerStyle} flexItem variant="fullWidth" />
+        <List
+          sx={{
+            display: "flex",
+            flexDirection: window.innerWidth > 500 ? "column" : "row",
+            flexWrap: "wrap",
+            height: "180px",
+            color: theme.palette.primary.main,
+          }}
+        >
+          {Object.entries(aboutMeData).map((item) => {
+            if (item[0] !== "whoAmI")
+              return (
+                <ListItem
+                  sx={{
+                    width: window.innerWidth > 500 ? "50%" : "100%",
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                  key={item[0]}
                 >
-                  {item[0]}:{" "}
-                </Typography>
-                <Typography
-                  variant="h6"
-                  style={{ color: theme.palette.primary.main }}
-                >
-                  {item[1]}
-                </Typography>
-              </ListItem>
-            );
-        })}
-      </List>
+                  <Typography
+                    variant="h6"
+                    style={{ color: theme.palette.primary.main }}
+                  >
+                    {item[0]}:{" "}
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    style={{ color: theme.palette.primary.main }}
+                  >
+                    {item[1]}
+                  </Typography>
+                </ListItem>
+              );
+          })}
+        </List>
+      </Box>
     </AboutMeContainer>
   );
 };

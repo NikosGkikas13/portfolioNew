@@ -37,6 +37,15 @@
   .glow-on-hover p {
     font-size: 0.8rem;
   }
+  #about_me_container > div {
+    max-width: 450px;
+  }
+  #whoAmIText {
+    font-size: 1.1rem;
+  }
+  #about_me_container h6 {
+    font-size: 1.1rem;
+  }
 }
 @media only screen and (max-width: 600px) {
   #homeInfo h2 {
