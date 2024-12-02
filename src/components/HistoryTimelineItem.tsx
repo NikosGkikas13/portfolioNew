@@ -44,7 +44,6 @@ const HistoryTimelineItem = ({
         {" "}
         <Typography
           variant="h6"
-          component="span"
           sx={{
             fontSize: window.innerWidth > 500 ? "undefined" : "1rem",
             color: theme.palette.primary.main,

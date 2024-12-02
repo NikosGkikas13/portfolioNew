@@ -28,6 +28,7 @@ const PersonalInfo = () => {
         </Typography>
         <Divider sx={dividerStyle} flexItem variant="fullWidth" />
         <List
+          id="infoList"
           sx={{
             display: "flex",
             flexDirection: window.innerWidth > 500 ? "column" : "row",

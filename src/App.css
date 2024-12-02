@@ -56,3 +56,8 @@ body {
 .css-b8kjv1-MuiButtonBase-root-MuiListItemButton-root:hover {
   background-color: transparent !important;
 }
+.spaceCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

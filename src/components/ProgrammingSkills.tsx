@@ -39,6 +39,7 @@ const ProgrammingSkills = () => {
                 sx={{ maxWidth: window.innerWidth > 600 ? "30%" : "50%" }}
               >
                 <Card
+                  className="spaceCard"
                   sx={{
                     border: `2px solid ${theme.palette.primary.main}`,
                     height: "220px",
@@ -60,7 +61,7 @@ const ProgrammingSkills = () => {
                       top: "35px",
                     }}
                   />
-                  <CardContent>
+                  {/* <CardContent>
                     <Typography
                       gutterBottom
                       variant="h5"
@@ -75,7 +76,7 @@ const ProgrammingSkills = () => {
                     >
                       {item.title}
                     </Typography>
-                  </CardContent>
+                  </CardContent> */}
                   <CardActions
                     sx={{ display: "flex", justifyContent: "center" }}
                   >

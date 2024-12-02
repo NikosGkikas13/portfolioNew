@@ -18,7 +18,7 @@ import { historyData } from "../constants";
 const HistoryTimeline = () => {
   return (
     <AboutMeContainer title="EXPERIENCE">
-      <Timeline>
+      <Timeline id="timelineContainer">
         {historyData.map((item, index, arr) => (
           <HistoryTimelineItem
             companyTitle={item.companyTitle}

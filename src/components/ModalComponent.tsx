@@ -44,7 +44,7 @@ export const ModalComponent = ({
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} className="modalBox">
           <img style={{ width: "100%" }} src={programmingLanguage} alt="" />
         </Box>
       </Modal>
