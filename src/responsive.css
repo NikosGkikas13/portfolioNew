@@ -20,6 +20,12 @@
   #services > ul h6 {
     font-size: 1rem;
   }
+  .leaflet-container {
+    max-width: 740px !important;
+  }
+  #contactForm {
+    max-width: 700px !important;
+  }
 }
 @media only screen and (max-width: 768px) {
   #homeInfo h2 {
@@ -67,6 +73,12 @@
   }
   .modalBox {
     max-width: 420px;
+  }
+  .leaflet-container {
+    max-width: 560px !important;
+  }
+  #contactForm {
+    max-width: 520px !important;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -116,6 +128,12 @@
   .modalBox {
     max-width: 70%;
   }
+  .leaflet-container {
+    max-width: 440px !important;
+  }
+  #contactForm {
+    max-width: 400px !important;
+  }
 }
 @media only screen and (max-width: 480px) {
   #services > ul > li {
@@ -132,5 +150,11 @@
   }
   #timelineContainer h6 {
     font-size: 1rem;
+  }
+  .leaflet-container {
+    max-width: 300px !important;
+  }
+  #contactForm {
+    max-width: 260px !important;
   }
 }

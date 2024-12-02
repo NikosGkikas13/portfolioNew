@@ -5,10 +5,11 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 const MapComponent = () => {
   return (
     <MapContainer
+      id="map "
       center={[38.174201105319455, 23.921665921549554]}
       zoom={13}
       scrollWheelZoom={true}
-      style={{ height: "300px", width: "80%" }}
+      style={{ height: "300px", maxWidth: "1024px", width: "100%" }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

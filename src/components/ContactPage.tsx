@@ -42,21 +42,24 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
       gap: "50px",
     },
     form: {
-      width: "80%",
+      width: "100%",
+      maxWidth: "984px",
       display: "flex",
       flexWrap: "wrap",
       gap: "10px",
       justifyContent: "center",
+      background: "#48abe0",
+      padding: "20px",
     },
     input: {
       width: "45%",
-      border: `1px solid ${theme.palette.primary.main}`,
       borderRadius: "4px",
+      // background: theme.palette.primary.contrastText,
     },
     textarea: {
       width: "100%",
-      border: `1px solid ${theme.palette.primary.main}`,
       borderRadius: "4px",
+      // background: theme.palette.primary.contrastText,
     },
   };
 
@@ -79,7 +82,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   return (
     <Box sx={style.container}>
       <MapComponent />
-      <form style={style.form} ref={form} onSubmit={sendEmail}>
+      <form style={style.form} ref={form} onSubmit={sendEmail} id="contactForm">
         <Box
           sx={{
             width: "100%",
