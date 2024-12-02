@@ -1,8 +1,8 @@
 import { Box, Button, Container, TextField, useTheme } from "@mui/material";
-import { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MapComponent from "./MapComponent";
 import services from "../assets/services.jpg";
-
+import emailjs from "@emailjs/browser";
 const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -11,6 +11,25 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   const [emailError, setEmailError] = useState(false);
   const theme = useTheme();
   useEffect(() => showHeader());
+  // const form = useRef<string | HTMLFormElement>("");
+  const form = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    if (!form.current) return;
+    emailjs
+      .sendForm("contact_service", "template_sdf8o28", form.current, {
+        publicKey: "-fQBJ6O_sM-RKyMEG",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
 
   const style = {
     container: {
@@ -60,7 +79,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   return (
     <Box sx={style.container}>
       <MapComponent />
-      <form style={style.form}>
+      <form style={style.form} ref={form} onSubmit={sendEmail}>
         <Box
           sx={{
             width: "100%",
@@ -76,6 +95,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
             label="Email"
             variant="outlined"
             type="email"
+            name="user_email"
             required
             helperText={emailError ? "Please enter a valid email" : ""}
             onBlur={(e) => emailValidation(e.target.value)}
@@ -86,6 +106,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
             sx={style.input}
             id="nameInput"
             label="Name"
+            name="user_name"
             variant="outlined"
             required
             helperText={nameError ? "Please enter a valid name" : ""}
@@ -98,6 +119,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
           id="emailInput"
           label="Message"
           variant="outlined"
+          name="message"
           multiline
           rows={4}
           required

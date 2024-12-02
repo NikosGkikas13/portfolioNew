@@ -5,12 +5,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { Box, ThemeProvider } from "@mui/material";
 import PageHome from "./components/PageHome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ServicePage from "./components/ServicePage";
 import AboutMePage from "./components/AboutMePage";
 import ContactPage from "./components/ContactPage";
 import { darkTheme, lightTheme } from "./themes";
 import { isMobile } from "./constants";
+import emailjs from "@emailjs/browser";
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
@@ -23,6 +24,7 @@ function App() {
     background: "#716b6b",
     overflow: "scroll",
   };
+  useEffect(() => emailjs.init("-fQBJ6O_sM-RKyMEG"), []);
   return (
     <BrowserRouter>
       <Box sx={boxStyle}>
