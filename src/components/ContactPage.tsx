@@ -3,12 +3,14 @@ import React, { useEffect, useRef, useState } from "react";
 import MapComponent from "./MapComponent";
 import services from "../assets/services.jpg";
 import emailjs from "@emailjs/browser";
+import BasicPopover from "./PopOver";
 const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [popOverText, setPopOverText] = useState("");
   const theme = useTheme();
   useEffect(() => showHeader());
   // const form = useRef<string | HTMLFormElement>("");
@@ -24,9 +26,11 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
       .then(
         () => {
           console.log("SUCCESS!");
+          setPopOverText("Message sent");
         },
         (error) => {
           console.log("FAILED...", error.text);
+          setPopOverText("Message failed");
         }
       );
   };
@@ -50,6 +54,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
       justifyContent: "center",
       background: "#48abe0",
       padding: "20px",
+      borderRadius: "8px",
     },
     input: {
       width: "45%",
@@ -128,9 +133,10 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
           required
           onChange={(e) => setMessage(e.target.value)}
         />
-        <Button variant="contained" type="submit">
+        {/* <Button variant="contained" type="submit">
           submit
-        </Button>
+        </Button> */}
+        <BasicPopover popOverText={popOverText} />
       </form>
     </Box>
   );
