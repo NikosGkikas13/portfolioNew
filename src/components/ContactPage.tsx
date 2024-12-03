@@ -1,4 +1,4 @@
-import { Box, TextField, useTheme } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import MapComponent from "./MapComponent";
 import services from "../assets/services.jpg";
@@ -6,15 +6,11 @@ import emailjs from "@emailjs/browser";
 import BasicPopover from "./PopOver";
 import { isDesktop } from "../constants";
 const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [popOverText, setPopOverText] = useState("");
-  const theme = useTheme();
   useEffect(() => showHeader());
-  // const form = useRef<string | HTMLFormElement>("");
+
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e) => {
@@ -108,7 +104,22 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
             required
             helperText={emailError ? "Please enter a valid email" : ""}
             onBlur={(e) => emailValidation(e.target.value)}
-            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="new-username"
+            slotProps={{
+              input: {
+                autoComplete: "new-email", // Use a non-standard autocomplete value
+              },
+            }}
+          />
+          <TextField
+            label="Email"
+            type="email"
+            variant="outlined"
+            slotProps={{
+              input: {
+                autoComplete: "new-email", // Use a non-standard autocomplete value
+              },
+            }}
           />
           <TextField
             error={nameError}
@@ -120,23 +131,24 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
             required
             helperText={nameError ? "Please enter a valid name" : ""}
             onBlur={(e) => nameValidation(e.target.value)}
-            onChange={(e) => setName(e.target.value)}
+            slotProps={{
+              input: {
+                autoComplete: "off", // Disable autocomplete
+              },
+            }}
           />
         </Box>
         <TextField
           sx={style.textarea}
-          id="emailInput"
+          id="messageInput"
           label="Message"
           variant="outlined"
           name="message"
           multiline
           rows={4}
           required
-          onChange={(e) => setMessage(e.target.value)}
         />
-        {/* <Button variant="contained" type="submit">
-          submit
-        </Button> */}
+
         <BasicPopover popOverText={popOverText} />
       </form>
     </Box>

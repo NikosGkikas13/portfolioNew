@@ -15,7 +15,6 @@ import emailjs from "@emailjs/browser";
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
-  // const theme = createTheme();
   const [themeSwitch, setThemeSwitch] = useState(false);
   const theme = themeSwitch ? lightTheme : darkTheme;
   const switchTheme = () => setThemeSwitch(!themeSwitch);
@@ -25,6 +24,7 @@ function App() {
     overflow: "scroll",
   };
   useEffect(() => emailjs.init("-fQBJ6O_sM-RKyMEG"), []);
+
   return (
     <BrowserRouter>
       <Box sx={boxStyle}>
