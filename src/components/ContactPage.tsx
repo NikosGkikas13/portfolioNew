@@ -1,9 +1,10 @@
-import { Box, Button, Container, TextField, useTheme } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import { Box, TextField, useTheme } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
 import MapComponent from "./MapComponent";
 import services from "../assets/services.jpg";
 import emailjs from "@emailjs/browser";
 import BasicPopover from "./PopOver";
+import { isDesktop } from "../constants";
 const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -42,7 +43,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
       flexDirection: "column",
       alignItems: "center",
       background: `url(${services})`,
-      height: "90%",
+      height: isDesktop ? "90%" : "100%",
       gap: "50px",
     },
     form: {
@@ -69,7 +70,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   };
 
   const nameValidation = (text: string) => {
-    if (/[^a-zA-Z]/.test(text)) {
+    if (/[^a-zA-Z_ ]/.test(text)) {
       setNameError(true);
     } else {
       setNameError(false);

@@ -16,7 +16,7 @@ const AboutMe = ({ showHeader }: { showHeader: () => void }) => {
         flexDirection: "column",
         alignItems: "center",
         gap: "40px",
-        padding: "20px 0px",
+        padding: "60px 0px",
         overflow: "auto",
         background: `url(${services})`,
         backgroundSize: "cover",

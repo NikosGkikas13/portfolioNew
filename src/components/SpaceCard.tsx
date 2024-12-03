@@ -5,7 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
+import homeCardDark from "../assets/homeCardDark.jpg";
+import homeCardLight from "../assets/homeCardLight.jpg";
 import { useTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import { isMobile } from "../constants";
@@ -23,7 +24,11 @@ const SpaceCard = ({ name, description, icon }: SpaceCardProps) => {
         sx={{
           display: isMobile ? "flex" : undefined,
           alignItems: "center",
-          background: theme.palette.background.default,
+          // background: theme.palette.background.default,
+          background: `url(${
+            theme.palette.mode === "dark" ? homeCardDark : homeCardLight
+          })`,
+          backgroundSize: "cover",
           maxWidth: 280,
           height: !isMobile ? 280 : 160,
           paddingTop: "20px",

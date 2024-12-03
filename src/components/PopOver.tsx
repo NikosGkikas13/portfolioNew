@@ -27,7 +27,7 @@ const BasicPopover = ({ popOverText }: { popOverText: string }) => {
         onClick={handleClick}
         type="submit"
       >
-        Open Popover
+        Send
       </Button>
       <Popover
         id={id}

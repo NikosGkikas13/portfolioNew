@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Divider,
   Drawer,
@@ -15,6 +16,7 @@ import { isDesktop, PAGES } from "../constants";
 import ThemeSwitchButton from "./ThemeSwitchButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import avatar from "../assets/avatar.jpeg";
 const Header = ({
   showHeader,
   switchTheme,
@@ -78,6 +80,8 @@ const Header = ({
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          background:
+            "linear-gradient(180deg, rgba(222,0,255,1) 0%, rgba(72,171,224,1) 100%)",
         }}
         role="presentation"
         onClick={toggleDrawer(false)}
@@ -94,22 +98,27 @@ const Header = ({
           role="presentation"
           onClick={toggleDrawer(false)}
         >
-          {/* <Avatar
+          <Avatar
             alt="Remy Sharp"
             src={avatar}
             sx={{ width: 70, height: 70 }}
-          /> */}
+          />
           <List>
             {PAGES.map((page) => (
               <ListItem key={page.name} disablePadding>
                 <ListItemButton>
                   <Link to={page.link}>
-                    <Typography>{page.name}</Typography>
+                    <Typography
+                      sx={{ color: theme.palette.primary.contrastText }}
+                    >
+                      {page.name}
+                    </Typography>
                   </Link>
                 </ListItemButton>
               </ListItem>
             ))}
           </List>
+          <ThemeSwitchButton toggle={switchTheme} />
           <Divider />
         </Box>
       </Box>
