@@ -7,7 +7,6 @@ import {
   TimelineSeparator,
 } from "@mui/lab";
 import { Typography, useTheme } from "@mui/material";
-import React from "react";
 
 interface HistoryTimelineItemProps {
   companyTitle: string;

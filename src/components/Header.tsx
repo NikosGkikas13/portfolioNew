@@ -10,7 +10,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { isDesktop, PAGES } from "../constants";
 import ThemeSwitchButton from "./ThemeSwitchButton";
@@ -30,10 +30,6 @@ const Header = ({
       <div
         style={{
           display: !showHeader ? "none" : "block",
-
-          // background: `url(${header4})`,
-          // backgroundRepeat: "no-repeat",
-          // backgroundSize: "cover",
           height: "10%",
           background:
             "linear-gradient(270deg, rgba(222,0,255,1) 0%, rgba(72,171,224,1) 100%)",
@@ -132,7 +128,6 @@ const Header = ({
             top: 10,
             left: 10,
             zIndex: 1201,
-            // color: "white",
           }}
           onClick={() => setOpen(!open)}
         >

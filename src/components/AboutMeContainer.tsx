@@ -1,5 +1,5 @@
 import { Box, useTheme } from "@mui/material";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 const AboutMeContainer = ({
   title,

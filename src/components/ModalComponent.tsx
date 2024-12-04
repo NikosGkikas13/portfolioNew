@@ -1,9 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { Divider, List, ListItem, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material";
 
 export const ModalComponent = ({
   programmingLanguage,

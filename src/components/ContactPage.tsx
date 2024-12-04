@@ -13,7 +13,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
 
   const form = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.current) return;
     emailjs
@@ -46,7 +46,6 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
       width: "100%",
       maxWidth: "984px",
       display: "flex",
-      flexWrap: "wrap",
       gap: "10px",
       justifyContent: "center",
       background: "#48abe0",
@@ -56,12 +55,10 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
     input: {
       width: "45%",
       borderRadius: "4px",
-      // background: theme.palette.primary.contrastText,
     },
     textarea: {
       width: "100%",
       borderRadius: "4px",
-      // background: theme.palette.primary.contrastText,
     },
   };
 
@@ -84,7 +81,12 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   return (
     <Box sx={style.container}>
       <MapComponent />
-      <form style={style.form} ref={form} onSubmit={sendEmail} id="contactForm">
+      <form
+        style={{ ...style.form, flexWrap: "wrap" }}
+        ref={form}
+        onSubmit={sendEmail}
+        id="contactForm"
+      >
         <Box
           sx={{
             width: "100%",

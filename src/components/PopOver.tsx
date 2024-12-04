@@ -16,7 +16,7 @@ const BasicPopover = ({ popOverText }: { popOverText: string }) => {
     setAnchorEl(null);
   };
 
-  const open = popOverText && Boolean(anchorEl);
+  const open = Boolean(popOverText) && Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
   return (

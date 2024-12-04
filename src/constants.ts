@@ -38,7 +38,7 @@ export const PAGES: {
   description?: string;
   icon?: string;
 }[] = [
-  { name: "Home", link: "/home" },
+  { name: "Home", link: "/" },
   {
     name: "Services",
     link: "/services",

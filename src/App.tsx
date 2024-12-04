@@ -1,6 +1,3 @@
-import "./App.css";
-import "./Animation.css";
-import "./responsive.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { Box, ThemeProvider } from "@mui/material";
@@ -12,6 +9,9 @@ import ContactPage from "./components/ContactPage";
 import { darkTheme, lightTheme } from "./themes";
 import { isMobile } from "./constants";
 import emailjs from "@emailjs/browser";
+import "./App.css";
+import "./Animation.css";
+import "./responsive.css";
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
@@ -32,7 +32,7 @@ function App() {
           <Header showHeader={showHeader} switchTheme={switchTheme} />
           <Routes>
             <Route
-              path={"/home"}
+              path={"/"}
               element={
                 <PageHome
                   hideHeader={() => setShowHeader(false)}
@@ -52,7 +52,7 @@ function App() {
               path={"/contact"}
               element={<ContactPage showHeader={() => setShowHeader(true)} />}
             />
-            <Route path="*" element={<Navigate to="/home" />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </ThemeProvider>
       </Box>

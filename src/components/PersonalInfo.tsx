@@ -1,4 +1,3 @@
-import React from "react";
 import AboutMeContainer from "./AboutMeContainer";
 import {
   Box,
@@ -12,10 +11,22 @@ import { aboutMeData } from "../constants";
 
 const PersonalInfo = () => {
   const theme = useTheme();
-  const dividerStyle = {
-    background: theme.palette.primary.main,
-    margin: "20px 0px",
+  const style = {
+    divider: { background: theme.palette.primary.main, margin: "20px 0px" },
+    infoList: {
+      display: "flex",
+      flexDirection: window.innerWidth > 500 ? "column" : "row",
+      flexWrap: "wrap",
+      height: "180px",
+      color: theme.palette.primary.main,
+    },
+    listItem: {
+      width: window.innerWidth > 500 ? "50%" : "100%",
+      display: "flex",
+      justifyContent: "space-between",
+    },
   };
+
   return (
     <AboutMeContainer title="ABOUT ME">
       <Box>
@@ -26,28 +37,12 @@ const PersonalInfo = () => {
         >
           {aboutMeData.whoAmI}
         </Typography>
-        <Divider sx={dividerStyle} flexItem variant="fullWidth" />
-        <List
-          id="infoList"
-          sx={{
-            display: "flex",
-            flexDirection: window.innerWidth > 500 ? "column" : "row",
-            flexWrap: "wrap",
-            height: "180px",
-            color: theme.palette.primary.main,
-          }}
-        >
+        <Divider sx={style.divider} flexItem variant="fullWidth" />
+        <List id="infoList" sx={style.infoList}>
           {Object.entries(aboutMeData).map((item) => {
             if (item[0] !== "whoAmI")
               return (
-                <ListItem
-                  sx={{
-                    width: window.innerWidth > 500 ? "50%" : "100%",
-                    display: "flex",
-                    justifyContent: "space-between",
-                  }}
-                  key={item[0]}
-                >
+                <ListItem sx={style.listItem} key={item[0]}>
                   <Typography
                     variant="h6"
                     style={{ color: theme.palette.primary.main }}

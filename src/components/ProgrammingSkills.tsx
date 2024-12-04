@@ -1,11 +1,9 @@
 import AboutMeContainer from "./AboutMeContainer";
-import ambient from "../assets/ambient.jpg";
 import purple from "../assets/purple.jpg";
 import {
   Box,
   Card,
   CardActions,
-  CardContent,
   CardMedia,
   List,
   ListItem,
@@ -17,6 +15,31 @@ import { programmingLanguages } from "../constants";
 
 const ProgrammingSkills = () => {
   const theme = useTheme();
+  const style = {
+    list: {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      color: theme.palette.primary.main,
+    },
+    card: {
+      border: `2px solid ${theme.palette.primary.main}`,
+      height: "220px",
+      width: "100%",
+      borderRadius: 3,
+      background: `url(${purple})`,
+      backgroundPosition: "left",
+    },
+    cardMedia: {
+      height: "50px",
+      margin: "0 auto",
+      padding: "5px",
+      width: "auto",
+      position: "relative",
+      top: "35px",
+    },
+    cardActions: { display: "flex", justifyContent: "center" },
+  };
   return (
     <AboutMeContainer title="KNOWLEDGE">
       <Box>
@@ -24,62 +47,20 @@ const ProgrammingSkills = () => {
           PROGRAMMING SKILLS
         </Typography>
 
-        <List
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            color: theme.palette.primary.main,
-          }}
-        >
+        <List sx={style.list}>
           {programmingLanguages.map((item) => {
             return (
               <ListItem
                 key={item.title}
                 sx={{ maxWidth: window.innerWidth > 600 ? "30%" : "50%" }}
               >
-                <Card
-                  className="spaceCard"
-                  sx={{
-                    border: `2px solid ${theme.palette.primary.main}`,
-                    height: "220px",
-                    width: "100%",
-                    borderRadius: 3,
-                    background: `url(${purple})`,
-                    backgroundPosition: "left",
-                  }}
-                >
+                <Card className="spaceCard" sx={style.card}>
                   <CardMedia
                     component="img"
                     image={item.icon}
-                    sx={{
-                      height: "50px",
-                      margin: "0 auto",
-                      padding: "5px",
-                      width: "auto",
-                      position: "relative",
-                      top: "35px",
-                    }}
+                    sx={style.cardMedia}
                   />
-                  {/* <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      textAlign={"center"}
-                      component="div"
-                      sx={{
-                        fontSize:
-                          window.innerWidth > 768 ? "undefined" : "1rem",
-                        color: theme.palette.primary.main,
-                        padding: 1,
-                      }}
-                    >
-                      {item.title}
-                    </Typography>
-                  </CardContent> */}
-                  <CardActions
-                    sx={{ display: "flex", justifyContent: "center" }}
-                  >
+                  <CardActions sx={style.cardActions}>
                     <ModalComponent programmingLanguage={item.modal} />
                   </CardActions>
                 </Card>
