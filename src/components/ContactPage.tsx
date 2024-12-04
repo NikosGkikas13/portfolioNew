@@ -111,16 +111,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
               },
             }}
           />
-          <TextField
-            label="Email"
-            type="email"
-            variant="outlined"
-            slotProps={{
-              input: {
-                autoComplete: "new-email", // Use a non-standard autocomplete value
-              },
-            }}
-          />
+
           <TextField
             error={nameError}
             sx={style.input}
