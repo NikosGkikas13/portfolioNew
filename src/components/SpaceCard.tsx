@@ -32,7 +32,7 @@ const SpaceCard = ({ name, description, icon }: SpaceCardProps) => {
   return (
     <Box className="glow-on-hover" sx={{ height: !isMobile ? 300 : 180 }}>
       <Card sx={style.card}>
-        <CardMedia component="img" alt="green iguana" image={icon} />
+        <CardMedia component="img" loading="lazy" image={icon} />
         <CardContent>
           <Typography
             gutterBottom

@@ -79,7 +79,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
   };
 
   return (
-    <Box sx={style.container}>
+    <Box sx={style.container} id="contactPageContainer">
       <MapComponent />
       <form
         style={{ ...style.form, flexWrap: "wrap" }}

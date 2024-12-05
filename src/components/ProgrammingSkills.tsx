@@ -59,6 +59,7 @@ const ProgrammingSkills = () => {
                     component="img"
                     image={item.icon}
                     sx={style.cardMedia}
+                    loading="lazy"
                   />
                   <CardActions sx={style.cardActions}>
                     <ModalComponent programmingLanguage={item.modal} />

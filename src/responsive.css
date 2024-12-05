@@ -157,4 +157,11 @@
   #contactForm {
     max-width: 260px !important;
   }
+  #contactPageContainer {
+    padding: 20px 0px;
+  }
+  #map,
+  #contactForm {
+    height: 40%;
+  }
 }
