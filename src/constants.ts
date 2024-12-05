@@ -147,13 +147,17 @@ export const historyData = [
     companyTitle: "Freelance",
     years: "2019 - 2020",
     jobTitle: "Junior web developer",
-    jobDescription: ["maintained the whole project all by  myself"],
+    jobDescription: [
+      "Created some freelance projects while making my first steps in the programming world.",
+    ],
   },
   {
     companyTitle: "Sportion",
     years: "2020 - 2022",
     jobTitle: "Junior web developer",
-    jobDescription: ["maintained the whole project all by  myself"],
+    jobDescription: [
+      "Implemented/ revamped/ maintained various landing pages from scratch to completion.",
+    ],
   },
   {
     companyTitle: "OKTO",
