@@ -12,6 +12,7 @@ import emailjs from "@emailjs/browser";
 import "./App.css";
 import "./Animation.css";
 import "./responsive.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
@@ -30,6 +31,7 @@ function App() {
       <Box sx={boxStyle}>
         <ThemeProvider theme={theme}>
           <Header showHeader={showHeader} switchTheme={switchTheme} />
+          <ScrollToTop />
           <Routes>
             <Route
               path={"/"}

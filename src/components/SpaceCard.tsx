@@ -19,13 +19,14 @@ const SpaceCard = ({ name, description, icon }: SpaceCardProps) => {
     card: {
       display: isMobile ? "flex" : undefined,
       alignItems: "center",
+
       background: `url(${
         theme.palette.mode === "dark" ? homeCardDark : homeCardLight
       })`,
       backgroundSize: "cover",
       maxWidth: 280,
       height: !isMobile ? 280 : 160,
-      paddingTop: "20px",
+      padding: "10px",
       boxShadow: `0px 0px 10px 10px linear-gradient(90deg, rgba(242,46,235,0.8575805322128851) 0%, rgba(0,212,255,0.8603816526610644)`,
     },
   };
