@@ -30,7 +30,7 @@ const Header = ({
       <header
         style={{
           display: !showHeader ? "none" : "block",
-          height: "10%",
+          height: "85px",
           background:
             "linear-gradient(270deg, rgba(222,0,255,1) 0%, rgba(72,171,224,1) 100%)",
         }}
