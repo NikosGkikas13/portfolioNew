@@ -1,6 +1,6 @@
 import { Box, List } from "@mui/material";
 import * as React from "react";
-import { isMobile, SERVICES } from "../constants";
+import { isDesktop, isMobile, SERVICES } from "../constants";
 import Service from "./Service";
 import { ServiceType } from "../Types";
 import services from "../assets/services.jpg";
@@ -8,6 +8,12 @@ const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
   React.useEffect(() => showHeader());
 
   const style = {
+    containerBox: {
+      background: `url(${services})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      marginTop: isDesktop ? "85px" : "0px",
+    },
     list: {
       display: "flex",
       flexWrap: "wrap",
@@ -26,14 +32,7 @@ const ServicePage = ({ showHeader }: { showHeader: () => void }) => {
     },
   };
   return (
-    <Box
-      id="services-padding-container"
-      sx={{
-        background: `url(${services})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <Box id="services-padding-container" sx={style.containerBox}>
       <Box sx={style.box} id="services">
         <List sx={style.list}>
           {SERVICES.map((service: ServiceType, index) => {

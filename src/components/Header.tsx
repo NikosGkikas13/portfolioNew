@@ -27,7 +27,7 @@ const Header = ({
   const theme = useTheme();
   const DesktopNavbar = () => {
     return (
-      <div
+      <header
         style={{
           display: !showHeader ? "none" : "block",
           height: "10%",
@@ -56,7 +56,7 @@ const Header = ({
           ))}
           <ThemeSwitchButton toggle={switchTheme} />
         </Box>
-      </div>
+      </header>
     );
   };
   const MobileNavbar = () => {

@@ -142,13 +142,18 @@ export const aboutMeData = {
   whoAmI:
     "I’m Nikos Gkikas, a front-end web developer based in Athens, Greece. I have a Bachelor degree in Informatics Engineering. I find beauty in writting clean,thorough and well-structrured code for websites. My goal is to get better with each day.",
 };
+
 export const historyData = [
   {
-    companyTitle: "Freelance",
-    years: "2019 - 2020",
-    jobTitle: "Junior web developer",
+    companyTitle: "OKTO",
+    years: "2022 - now",
+    jobTitle: "Front end developer",
     jobDescription: [
-      "Created some freelance projects while making my first steps in the programming world.",
+      "Built and maintained secure, high-performance web applications using React and TypeScript, focusing on creating reusable and responsive Ul components to speed up development and improve code efficiency.",
+      "Worked closely with backend developers, product managers, and UI/UX designers in an Agile setting to deliver new features, meet business goals, and enhance user experience.",
+      "Managed application state using Redux and Context API, ensuring consistent state across components and pages.",
+      "Boosted frontend performance by optimizing rendering techniques, such as lazy loading and memoization, to reduce initial load time and improve responsiveness.",
+      "Received mentorship from senior developers on React and TypeScript best practices, leading to better productivity, improved code quality, and a stronger team workflow.",
     ],
   },
   {
@@ -156,14 +161,20 @@ export const historyData = [
     years: "2020 - 2022",
     jobTitle: "Junior web developer",
     jobDescription: [
-      "Implemented/ revamped/ maintained various landing pages from scratch to completion.",
+      "Creating fully responsive pages from scratch in collaboration with the design team.",
+      "Maintaining, improving, revamping existing landing pages.",
+      "Design mobile-based features.",
+      "Browser testing and debugging.",
+      "Fetching and handling data from API",
     ],
   },
   {
-    companyTitle: "OKTO",
-    years: "2022 - now",
-    jobTitle: "Front end developer",
-    jobDescription: ["maintained the whole project all by  myself"],
+    companyTitle: "Freelance",
+    years: "2019 - 2020",
+    jobTitle: "Junior web developer",
+    jobDescription: [
+      "Created some freelance projects while making my first steps in the programming world.",
+    ],
   },
 ];
 export const isDesktop = window.innerWidth > 1024;

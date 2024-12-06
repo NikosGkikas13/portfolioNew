@@ -41,6 +41,7 @@ const ContactPage = ({ showHeader }: { showHeader: () => void }) => {
       background: `url(${services})`,
       height: isDesktop ? "90%" : "100%",
       gap: "50px",
+      marginTop: isDesktop ? "85px" : "0px",
     },
     form: {
       width: "100%",

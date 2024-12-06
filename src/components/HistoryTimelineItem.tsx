@@ -6,7 +6,7 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import { Typography, useTheme } from "@mui/material";
+import { List, ListItem, Typography, useTheme } from "@mui/material";
 
 interface HistoryTimelineItemProps {
   companyTitle: string;
@@ -58,14 +58,20 @@ const HistoryTimelineItem = ({
         >
           {years}
         </Typography>
-        <Typography
-          sx={{
-            fontSize: window.innerWidth > 500 ? "undefined" : "0.8rem",
-            color: theme.palette.primary.main,
-          }}
-        >
-          {jobDescription}
-        </Typography>
+        <List id="timelineList">
+          {jobDescription.map((description) => (
+            <ListItem>
+              <Typography
+                sx={{
+                  fontSize: window.innerWidth > 500 ? "undefined" : "0.8rem",
+                  color: theme.palette.primary.main,
+                }}
+              >
+                {description}
+              </Typography>
+            </ListItem>
+          ))}
+        </List>
       </TimelineContent>
     </TimelineItem>
   );

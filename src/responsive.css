@@ -80,6 +80,12 @@
   #contactForm {
     max-width: 520px !important;
   }
+  #timelineContainer {
+    padding: 6px 0px;
+  }
+  #timelineContainer .css-n0t0x9-MuiTypography-root-MuiTimelineContent-root {
+    flex: 2;
+  }
 }
 @media only screen and (max-width: 600px) {
   #homeInfo h2 {
@@ -133,6 +139,10 @@
   }
   #contactForm {
     max-width: 400px !important;
+  }
+  #timelineContainer .MuiTimelineContent-positionRight,
+  #timelineContainer .MuiTimelineOppositeContent-positionRight {
+    padding: 6px;
   }
 }
 @media only screen and (max-width: 480px) {

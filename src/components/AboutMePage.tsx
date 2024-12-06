@@ -5,6 +5,7 @@ import ProgrammingSkills from "./ProgrammingSkills";
 import PersonalInfo from "./PersonalInfo";
 import HistoryTimeline from "./HistoryTimeline";
 import services from "../assets/services.jpg";
+import { isDesktop } from "../constants";
 const style = {
   display: "flex",
   flexDirection: "column",
@@ -15,6 +16,7 @@ const style = {
   background: `url(${services})`,
   backgroundSize: "cover",
   height: "90%",
+  marginTop: isDesktop ? "85px" : "0px",
 };
 const AboutMe = ({ showHeader }: { showHeader: () => void }) => {
   useEffect(() => showHeader());
