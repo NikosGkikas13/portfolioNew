@@ -37,7 +37,7 @@ function App() {
               path={"/"}
               element={
                 <PageHome
-                  hideHeader={() => setShowHeader(false)}
+                  hideHeader={() => setShowHeader(true)}
                   switchTheme={switchTheme}
                 />
               }
